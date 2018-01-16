@@ -1,0 +1,33 @@
+@import "compass";
+$attr-containerColor:#1e1e1e;
+body{
+	margin:0px;
+	padding:0px;
+}
+ul,li{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+.attr-container{
+	border:1px solid $attr-containerColor;
+	width:230px;
+	.attr-head{
+		border-top:1px solid lighten($attr-containerColor,22.5%);;
+		background-color:lighten($attr-containerColor,5%);
+		height:15px;
+		color:#e1e1e1;
+		line-height: 15px;
+		span{
+			font-size: 12px;
+			background-color:lighten($attr-containerColor,13.8%);
+			display: block;
+			float: left;
+		}
+	}
+	.attr-body{
+		background-color:lighten($attr-containerColor,13.8%);
+		border-top:1px solid lighten($attr-containerColor,22.5%);
+
+	}
+}

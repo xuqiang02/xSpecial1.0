@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@import "compass/css3/";
+@import "compass/utilities/color/contrast";
+@import "compass/utilities/general/clearfix";
+@import "../base/_setting";
+@import "_banner-config";
+.#{$superbird-prefix}banner{
+	.bx-wrapper {
+		position: relative;
+		margin: 0 auto 60px;
+		padding: 0;
+		*zoom: 1;
+		img{
+			max-width: 100%;
+			display: block;
+		}
+		.bx-viewport{
+			@if $bool_container_useBoxShadow{
+				@include box-shadow(0 0 5px lighten($color_container_borderColor,30%));
+			}
+			
+			border: solid $color_container_borderColor $px-bs_container_borderSize;
+			left:$px-bs_container_borderSize * -1;
+		}
+		.bx-pager,
+		.bx-controls-auto {
+			position: absolute;
+			bottom: -30px;
+			width: 100%;
+			text-align: center;
+			.bx-start {
+				display: block;
+				text-indent: -9999px;
+				width: 10px;
+				height: 11px;
+				outline: 0;
+				background: url(images/controls.png) -86px -11px no-repeat;
+				margin: 0 3px;
+				&:hover,
+				&.active {
+					background-position: -86px 0;
+				}
+			}
+			.bx-stop {
+				display: block;
+				text-indent: -9999px;
+				width: 9px;
+				height: 11px;
+				outline: 0;
+				background: url(images/controls.png) -86px -44px no-repeat;
+				margin: 0 3px;
+				&:hover,
+				&.active {
+					background-position: -86px -33px;
+				}
+			}
+		}
+		.bx-loading {
+			min-height: 50px;
+			background: url(images/bx_loader.gif) center center no-repeat #fff;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2000;
+		}
+		.bx-pager {
+			text-align: center;
+			font-size: .85em;
+			font-family: Arial;
+			font-weight: bold;
+			color: $color_dot_defaultColor;
+			padding-top: 20px;
+			&.bx-default-pager a {
+				background: $color_dot_defaultColor;
+				text-indent: -9999px;
+				display: block;
+				width: 10px;
+				height: 10px;
+				margin: 0 5px;
+				outline: 0;
+				@include border-radius(500px);
+				&:hover,&.active{
+					background: $color_dot_activeColor;
+				}
+			}
+		}
+		.bx-pager .bx-pager-item,
+		.bx-controls-auto .bx-controls-auto-item {
+			display: inline-block;
+			*zoom: 1;
+			*display: inline;
+		}
+		.bx-prev {
+			@if $bool_arrows_useinnerArrow{
+				left: $px-mop_arrows_arrowsMargin;
+			}
+			@else{
+				left: $px-mop_arrows_arrowsMargin * -1;
+			}
+			
+			background: url(images/controls.png) no-repeat 0 -32px;
+			&:hover{
+				background-position: 0 0;
+			}
+		}
+
+		.bx-next {
+			@if $bool_arrows_useinnerArrow{
+				right: $px-mop_arrows_arrowsMargin;
+			}
+			@else{
+				right: $px-mop_arrows_arrowsMargin * -1;
+			}
+			background: url(images/controls.png) no-repeat -43px -32px;
+			&:hover{
+				background-position: -43px 0;
+			}
+		}
+		.bx-controls-direction{
+			a{
+				position: absolute;
+				top: 50%;
+				margin-top: -16px;
+				outline: 0;
+				width: 32px;
+				height: 32px;
+				text-indent: -9999px;
+				z-index: 9999;
+				&.disabled{
+					display: none;
+				}
+			}
+			
+		}
+		.bx-caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: #666\9;
+			background: rgba(80, 80, 80, 0.75);
+			width: 100%;
+			span {
+				color: #fff;
+				font-family: Arial;
+				display: block;
+				font-size: .85em;
+				padding: 10px;
+			}
+		}
+		.bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+			text-align: left;
+			width: 80%;
+		}
+
+		.bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+			right: 0;
+			width: 35px;
+		}
+	}
+}

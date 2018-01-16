@@ -1,0 +1,14 @@
+@charset "UTF-8";
+$list_right-center_all_position                                  : right !default;                        //内容位置
+$color_all_bgcolor                                               : #00ccff !default;                      //背景颜色
+$color_all_bghovercolor                                          : #feb880 !default;                      //背景激活颜色
+$px_12-20_all_textsize                                           : 12px !default;                         //文字大小
+$bool_normal-bold_all_usetextweight                              : false !default;                        //文字加粗
+$bool_text_usebgcolor                                            : true !default;                         //背景是否显示颜色
+$px_0-10_text_border                                             : 0px !default;                          //边框大小
+$px_0-10_text_radius                                             : 0px !default;                          //圆角大小
+$percent_text_alpha                                              : 100% !default;                         //文字透明度
+$bool_icon_bgcolor                                               : true !default;                         //是否显示背景颜色
+$px_0-10_icon_border                                             : 0px !default;                          //边框大小
+$px_0-10_icon_radius                                             : 0px !default;                          //圆角大小
+$percent_icon_alpha                                              : 100% !default;                         //透明度

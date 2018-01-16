@@ -1,0 +1,184 @@
+body { 
+  -webkit-backface-visibility: hidden;
+}
+%animated {
+  // -webkit-animation-duration: 1s;
+  //    -moz-animation-duration: 1s;
+  //      -o-animation-duration: 1s;
+  //         animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+$bounceArr:"In" "InUp" "InDown" "InLeft" "InRight" "Out" "OutUp" "OutDown" "OutLeft" "OutRight";
+$fadeArr:"In" "InUp" "InDown" "InLeft" "InRight" "InUpBig" "InDownBig" "InLeftBig" "InRightBig" "Out" "OutUp" "OutDown" "OutLeft" "OutRight" "OutUpBig" "OutDownBig" "OutLeftBig" "OutRightBig";
+$rotateArr:"In" "InUpLeft" "InDownLeft" "InUpRight" "InDownRight" "Out" "OutUpLeft" "OutDownLeft" "OutUpRight" "OutDownRight" ;
+$lightSpeedArr:"In" "Out";
+$rollArr:"In" "Out";
+$slideArr:"InDown" "InLeft" "InRight" "OutLeft" "OutRight" "OutUp";
+$flipArr:"InX" "OutX" "InY" "OutY" ;
+@each $anim in $bounceArr{%bounce#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:bounce#{$anim};
+  -moz-animation-name:bounce#{$anim};
+  -o-animation-name:bounce#{$anim};
+  animation-name:bounce#{$anim};
+}}
+@each $anim in $fadeArr{%fade#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:fade#{$anim};
+  -moz-animation-name:fade#{$anim};
+  -o-animation-name:fade#{$anim};
+  animation-name:fade#{$anim};
+}}
+@each $anim in $rotateArr{%rotate#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:rotate#{$anim};
+  -moz-animation-name:rotate#{$anim};
+  -o-animation-name:rotate#{$anim};
+  animation-name:rotate#{$anim};
+}}
+@each $anim in $lightSpeedArr{%lightSpeed#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:lightSpeed#{$anim};
+  -moz-animation-name:lightSpeed#{$anim};
+  -o-animation-name:lightSpeed#{$anim};
+  animation-name:lightSpeed#{$anim};
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}}
+@each $anim in $rollArr{%roll#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:roll#{$anim};
+  -moz-animation-name:roll#{$anim};
+  -o-animation-name:roll#{$anim};
+  animation-name:roll#{$anim};
+}}
+@each $anim in $slideArr{%slide#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:slide#{$anim};
+  -moz-animation-name:slide#{$anim};
+  -o-animation-name:slide#{$anim};
+  animation-name:slide#{$anim};
+}}
+@each $anim in $flipArr{%flip#{$anim}{
+  @extend %animated;
+  -webkit-animation-name:flip#{$anim};
+  -moz-animation-name:flip#{$anim};
+  -o-animation-name:flip#{$anim};
+  animation-name:flip#{$anim};
+  -webkit-backface-visibility: visible !important;
+  -moz-backface-visibility: visible !important;
+  -o-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}}
+%bounce{
+  @extend %animated;
+  -webkit-animation-name:bounce;
+  -moz-animation-name:bounce;
+  -o-animation-name:bounce;
+  animation-name:bounce;
+}
+%wobble{
+  @extend %animated;
+  -webkit-animation-name:wobble;
+  -moz-animation-name:wobble;
+  -o-animation-name:wobble;
+  animation-name:wobble;
+}
+%flash{
+  @extend %animated;
+  -webkit-animation-name:flash;
+  -moz-animation-name:flash;
+  -o-animation-name:flash;
+  animation-name:flash;
+}
+%flip{
+  @extend %animated;
+  -webkit-animation-name:flip;
+  -moz-animation-name:flip;
+  -o-animation-name:flip;
+  animation-name:flip;
+  backface-visibility:visible!important;
+  backface-visibility:visible!important;
+  backface-visibility:visible!important;
+  backface-visibility:visible!important;
+}
+%hinge{
+  @extend %animated;
+  -webkit-animation-name:hinge;
+  -moz-animation-name:hinge;
+  -o-animation-name:hinge;
+  animation-name:hinge;
+  animation-duration:2s;
+}
+%pulse{
+  @extend %animated;
+  -webkit-animation-name:pulse;
+  -moz-animation-name:pulse;
+  -o-animation-name:pulse;
+  animation-name:pulse;
+}
+%shake{
+  @extend %animated;
+  -webkit-animation-name:shake;
+  -moz-animation-name:shake;
+  -o-animation-name:shake;
+  animation-name:shake;
+}
+%swing{
+  @extend %animated;
+  -webkit-animation-name:swing;
+  -moz-animation-name:swing;
+  -o-animation-name:swing;
+  animation-name:swing;
+  -webkit-transform-origin:top center;
+  -moz-transform-origin:top center;
+  -o-transform-origin:top center;
+  transform-origin:top center;
+}
+%tada{
+  @extend %animated;
+  -webkit-animation-name:tada;
+  -moz-animation-name:tada;
+  -o-animation-name:tada;
+  animation-name:tada;
+}
+%wiggle{
+  @extend %animated;
+  -webkit-animation-name:wiggle;
+  -moz-animation-name:wiggle;
+  -o-animation-name:wiggle;
+  animation-name:wiggle;
+  -webkit-animation-timing-function:ease-in;
+  -webkit-animation-duration:.75s;
+  -moz-animation-timing-function:ease-in;
+  -moz-animation-duration:.75s;
+  -o-animation-timing-function:ease-in;
+  -o-animation-duration:.75s;
+  animation-timing-function:ease-in;
+  animation-duration:.75s;
+}
+    //          "rotateIn" "rotateOut"
+    //    "rotateInUpLeft" "rotateOutUpLeft"
+    //  "rotateInDownLeft" "rotateOutDownLeft"
+    //   "rotateInUpRight" "rotateOutUpRight"
+    // "rotateInDownRight" "rotateOutDownRight"
+    //            "rollIn" "rollOut"
+    //       "slideInDown" "slideOutLeft"
+    //       "slideInLeft" "slideOutRight"
+    //      "slideInRight" "slideOutUp"
+    //           "flipInX" "flipOutX"
+    //           "flipInY" "flipOutY"
+    //            "fadeIn" "fadeOut"
+    //          "fadeInUp" "fadeOutUp"
+    //        "fadeInDown" "fadeOutDown"
+    //        "fadeInLeft" "fadeOutLeft"
+    //       "fadeInRight" "fadeOutRight"
+    //       "fadeInUpBig" "fadeOutUpBig"
+    //     "fadeInDownBig" "fadeOutDownBig"
+    //     "fadeInLeftBig" "fadeOutLeftBig"
+    //    "fadeInRightBig" "fadeOutRightBig"

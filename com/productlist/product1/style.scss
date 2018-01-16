@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "_config.scss";
+@import "_var.scss";
+
+
+#scd_product1 {
+	margin-top:$px_all_promargintop;
+	.span3{
+		text-align: center;
+		ul {
+			display: inline-block;
+		li{
+			position: relative;
+			max-width: 345px;
+			max-height: 280px;
+			img{
+				width: 100%;
+				height: 100%;
+				max-width: 345px;
+				max-height: 280px;
+			}
+			
+		}
+		}
+	}
+	.scd_product_txt{
+		background-color:$color_text_protextbgcolor;
+		overflow: hidden;
+		text-align: left;
+		padding:10px;
+		a{
+			color:$color_text_protextcolor;
+			margin-left: 25px;
+			font-size: $px_text_protextsize;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.arrow-top{
+			position:absolute; 
+			bottom:0px; 
+			left:47%;
+			height:0; 
+			width:0;
+			border-style:solid; 
+			border-width:0px 7px 7px 7px; 
+			border-color:transparent transparent $color_text_protextbgcolor transparent;
+	}
+	.scd_hoverdiv {
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		filter:alpha(opacity=$num_0-100_all_prohoverpercent);
+		-moz-opacity:$num_0-100_all_prohoverpercent / 100; 
+		opacity:$num_0-100_all_prohoverpercent / 100;
+		position:absolute;
+		top: 0px;
+		left: 0px;
+		display: none;
+		text-align: center;
+		a{
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			border-radius:40px;
+			background-color:$color_all_probgcolor;
+			color:#fff;
+			margin-top: 30%;
+			i{
+				color:$color_all_profontcolor;
+				display: block;
+				font-size: 18px;
+				line-height: 70px;
+			}
+			&:hover{
+				-webkit-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+				-moz-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+				-o-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+				animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+			}
+		}
+	}
+}

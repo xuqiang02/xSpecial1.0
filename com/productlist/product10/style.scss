@@ -1,0 +1,20 @@
+﻿@charset "UTF-8";
+@import "config";
+@import "var";
+
+.sysimplepro{
+   .sytitle{
+      color:$color_all_title;
+      font-size: $px_12-30_title;
+      text-align: $list_left-center-right;
+      margin-bottom:$px_0-50_all_titlebottom
+   }
+   img{
+      max-width: 100%;
+      text-align: center;
+      margin-bottom:$px_0-50_all_imgbottom;
+   }
+   .sydiscript{
+      font-size: $px_12-30_all_dis;
+   }
+}          

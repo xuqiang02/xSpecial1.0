@@ -1,0 +1,25 @@
+﻿@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+
+// $px_12-20_text_textsize                  : 16px !default;             //大小
+// $color_text_textcolor                    : #fff !default;             //颜色
+// $bool_text_textweight                    : false !default;            //是否加粗
+
+.dg-wrapper a{
+	background:none;
+	div.dg_name{
+		font-size:$px_12-20_text_textsize;
+		color:$color_text_textcolor;
+		@if $bool_text_textweight{
+			font-weight:normal;
+		}
+		else {
+			font-weight:bold;
+		}
+	} 
+	img{
+		width:100%;
+	}
+}

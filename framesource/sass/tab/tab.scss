@@ -1,0 +1,131 @@
+@import "compass/css3/images";
+@import "compass/css3/border-radius";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/transition";
+@import "../base/_anim";
+@import "../base/_setting";
+@import "_tab-config";
+@import "_tab-var";
+
+@function slighten($color,$percent){
+	@if $color=="transparent"{
+		@return $color;
+	}
+	@else{
+		@return lighten($color,$percent);
+	}
+}
+@function sdarken($color,$percent){
+	@if $color=="transparent"{
+		@return $color;
+	}
+	@else{
+		@return darken($color,$percent);
+	}
+}
+%tagDefaultStyle{
+	color:$color_tabtext_defaultColor;
+	background-color:$color_tabtext_defaultBg;
+	@if $bool_tabtext_useGrident{
+		@include background-image(linear-gradient(slighten($color_tabtext_defaultBg,$percent_tabtext_gridentStrong), sdarken($color_tabtext_defaultBg,$percent_tabtext_gridentStrong)));
+	}
+}
+%tagHoverStyle{
+	background-color:slighten($color_tabtext_defaultBg,5%);
+	@if $bool_tabtext_useGrident{
+		@include background-image(linear-gradient(sdarken($color_tabtext_defaultBg,$percent_tabtext_gridentStrong), slighten($color_tabtext_defaultBg,$percent_tabtext_gridentStrong)));
+	}
+}
+%tagActiveStyle{
+	color:$color_tabtext_activeColor;
+	background-color:$color_tabtext_activeBgColor;
+	@include background-image(none);
+	@if $px-mop_tab_marginv>0{
+		@if $bool_tabtext_useGrident{
+			@include background-image(linear-gradient(sdarken($color_tabtext_activeBgColor,$percent_tabtext_gridentStrong), slighten($color_tabtext_activeBgColor,$percent_tabtext_gridentStrong)));
+		}
+	}
+	@else if $bool_tabtext_useActiveGrident and $bool_tabtext_useGrident{
+		@include background-image(linear-gradient(sdarken($color_tabtext_activeBgColor,$percent_tabtext_gridentStrong), slighten($color_tabtext_activeBgColor,$percent_tabtext_gridentStrong)));
+		border-bottom-color: slighten($color_tabtext_activeBgColor,$percent_tabtext_gridentStrong);
+	}
+	@else{
+		border-bottom-color: $color_tabtext_activeBgColor;
+	}
+}
+.#{$superbird-prefix}tab{
+	position: relative;
+	>ul{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+		border-bottom:$px-bs_tab_borderSize solid $color_tab_borderColor;
+		@include pie-clearfix;
+		>li{
+			list-style: none;
+			margin:$px-mop_tab_marginv $px-mop_tab_marginh;
+			@if $px-mop_tab_marginv==0{
+				margin-bottom:$px-bs_tab_borderSize * -1;
+			}
+			padding:0px;
+			@if $px-mop_tab_marginh==0{
+				&:first-child .#{$superbird-prefix}tabtext{
+					border-#{$posh_tab_tagPosition}:$px-bs_tab_borderSize solid $color_tab_borderColor;
+				}
+			}
+			float: #{$posh_tab_tagPosition};
+			&:first-child{
+				margin-#{$posh_tab_tagPosition}:0px;
+			}
+			&.active{
+				.#{$superbird-prefix}tabtext{
+					@extend %tagActiveStyle;
+					
+				}
+			}
+		}
+	}
+}
+.#{$superbird-prefix}tabtext{
+	display: block;
+	margin:$px-mop_tabtext_marginh $px-mop_tabtext_marginv;
+	padding:$px-mop_tabtext_paddingh $px-mop_tabtext_paddingv;
+	border:$px-bs_tab_borderSize solid $color_tab_borderColor;
+	@if $px-mop_tab_marginh==0{
+		border-#{$posh_tab_tagPosition}:none;
+	}
+	@include return_RadiusStyle($px-rs_tab_tagRadiusSize,$posa_tab_tagRadiusPositon);
+	@extend %tagDefaultStyle;
+	&:hover{
+		@extend %tagHoverStyle;
+	}
+
+}
+.#{$superbird-prefix}tabcontent{
+	display:none;	
+	clear:both;
+	padding:$px-mop_tabcontent_padingv $px-mop_tabcontent_padingh;
+	background-color:$color_tabcontent_bgColor;
+	border:$px-bs_tabcontent_borderSize solid $color_tabcontent_borderColor;
+	@if $px-bs_tab_borderSize>0{
+		border-top:none;
+	}
+	&.active{
+		display: block;
+	}
+}
+.csstransitions{
+	.#{$superbird-prefix}tabcontent{
+		// @extend %#{$animout_tabcontent_animateOut};
+		-webkit-animation-duration: $time_tabcontent_animateTime;
+		-moz-animation-duration: $time_tabcontent_animateTime;
+		-o-animation-duration: $time_tabcontent_animateTime;
+		animation-duration: $time_tabcontent_animateTime;
+		&.active{
+			@extend %#{$animin_tabcontent_animateIn};
+		}
+	}
+	
+}
+
+

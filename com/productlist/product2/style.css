@@ -1,0 +1,8 @@
+.scd_product5_tit h3 { font-size: 16px; color: #777777; margin-left: 10px; }
+
+#scd_product5 { margin-top: 10px; }
+#scd_product5 .span3 { text-align: center; }
+#scd_product5 .span3 .pro5span { width: 100%; position: relative; }
+#scd_product5 .span3 img { width: 100%; }
+#scd_product5 .span3 .pro5div { position: absolute; bottom: 0px; height: 40px; width: 100%; overflow: hidden; display: none; background-color: #222222; filter: alpha(opacity=90); -moz-opacity: 0.9; opacity: 0.9; }
+#scd_product5 .span3 .pro5div a { font-size: 12px; color: white; line-height: 40px; padding-left: 15px; padding-right: 15px; }

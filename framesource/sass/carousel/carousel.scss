@@ -1,0 +1,116 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+@import "../base/_setting";
+@import "_carousel-config";
+@import "_carousel-var";
+
+
+
+.#{$superbird-prefix}carousel{
+	@include single-transition;
+	@include return_BlockStyle(
+		($px-mop_carouselContainer_paddingv $px-mop_carouselContainer_paddingh),
+		($px-mop_carouselContainer_marginv $px-mop_carouselContainer_marginh),
+		($px-bs_carouselContainer_borderSize,$color_carouselContainer_borderColor,$posa_carouselContainer_borderPosition),
+		($px-rs_carouselContainer_radiusSize,$posa_carouselContainer_radiusPosition),
+		($color_carouselContainer_backgroundColor,$color_carouselContainer_backgroundHoverColor)
+	);
+	position: relative;
+	.caroufredsel_wrapper{
+		>ul{
+			@include pie-clearfix;
+			>li{
+				float: left;
+				@include return_BlockStyle(
+					($px-mop_carouselItem_paddingv $px-mop_carouselItem_paddingh),
+					($px-mop_carouselItem_marginv $px-mop_carouselItem_marginh),
+					($px-bs_carouselItem_borderSize,$color_carouselItem_borderColor,$posa_carouselItem_borderPosition),
+					($px-bs_carouselItem_radiusSize,$posa_carouselItem_radiusPosition),
+					($color_carouselItem_backgroundColor,$color_carouselItem_backgroundHoverColor)
+				);
+				
+				@include single-transition;
+			}
+		}
+	}
+	.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+		@include single-transition;
+		@include return_BlockStyle(
+			($px-mop_carouselArrows_paddingv $px-mop_carouselArrows_paddingh),
+			(),
+			($px-bs_carouselArrows_borderSize,($color_carouselArrows_borderColor,$color_carouselArrows_borderHoverColor),$posa_carouselArrows_borderPosition),
+			($px-bs_carouselArrows_radiusSize,$posa_carouselArrows_radiusPosition),
+			($color_carouselArrows_backgroundColor,$color_carouselArrows_backgroundHoverColor)
+		);
+		position: absolute;
+		width:$px-fs_carouselArrows_width;
+		height:$px-fs_carouselArrows_height;
+		font-size: $px-fs_carouselArrows_fontSize;
+		line-height:$px-fs_carouselArrows_height;
+		text-align: center;
+		text-decoration: none;
+		@if $bool_carouselArrows_useGradent and $color_carouselArrows_backgroundColor!="transparent"{
+			@include return_gradentBg(($color_carouselArrows_backgroundColor,$color_carouselArrows_backgroundHoverColor),$percent_carouselArrows_gradentStrong);
+		}
+	}
+	@if $posa_carouselArrows_arrowsPosition=="top"{
+		.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+			top:$px-fs_carouselArrows_height * -1;
+			margin-top:$px-fs_carouselArrows_height * -0.5 - $px-mop_carouselArrows_paddingv;
+		}
+		.#{$superbird-prefix}prev{
+			left:0px;
+		}
+		.#{$superbird-prefix}next{
+			left:$px-mop_carouselArrows_arrowsPositionMop + $px-fs_carouselArrows_width *2;
+		}
+	}
+	@if $posa_carouselArrows_arrowsPosition=="right"{
+		.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+			top:$px-fs_carouselArrows_height * -1;
+			margin-top:$px-fs_carouselArrows_height * -0.5 - $px-mop_carouselArrows_paddingv;
+		}
+		.#{$superbird-prefix}prev{
+			right:$px-mop_carouselArrows_arrowsPositionMop + $px-fs_carouselArrows_width *2;
+		}
+		.#{$superbird-prefix}next{
+			right:0px;
+		}	
+	}
+	@if $posa_carouselArrows_arrowsPosition=="bottom"{
+		.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+			bottom:$px-fs_carouselArrows_height * -1;
+			margin-bottom:$px-fs_carouselArrows_height * -0.5 - $px-mop_carouselArrows_paddingv;
+		}
+		.#{$superbird-prefix}prev{
+			right:$px-mop_carouselArrows_arrowsPositionMop + $px-fs_carouselArrows_width *2;
+		}
+		.#{$superbird-prefix}next{
+			right:0px;
+		}
+	}
+	@if $posa_carouselArrows_arrowsPosition=="left"{
+		.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+			bottom:$px-fs_carouselArrows_height * -1;
+			margin-bottom:$px-fs_carouselArrows_height * -0.5 - $px-mop_carouselArrows_paddingv;
+		}
+		.#{$superbird-prefix}prev{
+			left:0px;
+		}
+		.#{$superbird-prefix}next{
+			left:$px-mop_carouselArrows_arrowsPositionMop + $px-fs_carouselArrows_width *2;
+		}
+	}
+	@if $posa_carouselArrows_arrowsPosition=="center"{
+		.#{$superbird-prefix}prev,.#{$superbird-prefix}next{
+			top:50%;
+			margin-top:$px-fs_carouselArrows_height * -0.5 - $px-mop_carouselArrows_paddingv;
+		}
+		.#{$superbird-prefix}prev{
+			left:$px-mop_carouselArrows_arrowsPositionMop;
+		}
+		.#{$superbird-prefix}next{
+			right:$px-mop_carouselArrows_arrowsPositionMop;
+		}
+	}
+}

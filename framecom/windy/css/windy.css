@@ -1,0 +1,138 @@
+ul.wi-container {
+	width: 100%;
+	max-width:400px;
+	margin: 0 auto 30px;
+	position: relative;
+	padding: 0;
+	list-style-type: none; 
+	-webkit-perspective: 1400px;
+	-moz-perspective: 1400px;
+	-ms-perspective: 1400px;
+	-o-perspective: 1400px;
+	perspective: 1400px;
+}
+
+ul.wi-container li {
+	width: 100%;
+	height: 100%;
+	display: none;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fff;
+	padding: 20px;
+	pointer-events: auto;
+}
+
+ul.wi-container li.wi-move {
+	pointer-events: none;
+	-webkit-transition: -webkit-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+	-moz-transition: -moz-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+	-o-transition: -o-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+	-ms-transition: -ms-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+	transition: transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+}
+.windy-demo {
+	width: 100%;
+	margin: 40px auto;
+	color: #aaa;
+}
+
+.windy-demo ul.wi-container {
+	width: 100%;
+	height:100%;
+	height:300px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.windy-demo h4 {
+	padding: 0 10px;
+	line-height: 26px;
+	margin: 0;
+}
+
+.windy-demo ul.wi-container li {
+	padding: 0;
+	border: 10px solid #fff;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.windy-demo #scd_slider {
+	width: 60%;
+	margin: 50px auto 0;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0 1px 1px rgba(255,255,255,0.8), inset 0 1px 2px rgba(0,0,0,0.3), 0 0 0 8px rgba(0,0,0,0.1), 0 1px 1px 8px rgba(255, 255, 255, 0.8);
+	background: #b0d4e3;
+background: -moz-linear-gradient(top, #b0d4e3 0%, #88bacf 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0d4e3), color-stop(100%,#88bacf));
+background: -webkit-linear-gradient(top, #b0d4e3 0%,#88bacf 100%);
+background: -o-linear-gradient(top, #b0d4e3 0%,#88bacf 100%);
+background: -ms-linear-gradient(top, #b0d4e3 0%,#88bacf 100%);
+background: linear-gradient(to bottom, #b0d4e3 0%,#88bacf 100%);
+}
+
+.windy-demo #scd_slider a {
+	outline: none;
+	cursor: pointer;
+	border: none;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.4);
+}
+.ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff; }
+.ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc; }
+.ui-widget-header a { color: #222222; }
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #dadada; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #212121; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; -khtml-border-top-left-radius: 4px; border-top-left-radius: 4px; }
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; -khtml-border-top-right-radius: 4px; border-top-right-radius: 4px; }
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; -khtml-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; -khtml-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+
+
+/*!
+ * jQuery UI Slider 1.8.23
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.ui-slider-vertical .ui-slider-range-max { top: 0; }
+
+

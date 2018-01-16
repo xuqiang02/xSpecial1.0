@@ -1,0 +1,5 @@
+@import "compass";
+
+.row,[class*="span"],[class*="col"]{
+	@include single-transition;
+}

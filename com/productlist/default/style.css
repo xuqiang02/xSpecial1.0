@@ -1,0 +1,124 @@
+body {
+  -webkit-backface-visibility: hidden; }
+
+.csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1lightbox, .csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1link {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1lightbox, .csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1link {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+.csstransitions .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1lightbox, .csstransitions .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1link {
+  -webkit-animation-name: flipInX;
+  -moz-animation-name: flipInX;
+  -o-animation-name: flipInX;
+  animation-name: flipInX;
+  -webkit-backface-visibility: visible !important;
+  -moz-backface-visibility: visible !important;
+  -o-backface-visibility: visible !important;
+  backface-visibility: visible !important; }
+
+.qqkillqq1gallery img, .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1cover {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px; }
+
+.qqkillqq1gallery img {
+  max-width: 100%; }
+.qqkillqq1gallery .qqkillqq1imgitem {
+  border: 0px solid #cccccc;
+  display: block;
+  padding: 3px 3px;
+  margin: 3px 3px;
+  border: 0px solid #cccccc;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  *zoom: 1; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover {
+    background-color: #00ccff; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1cover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1link {
+    display: block; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1lightbox {
+    display: block; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1lightbox {
+    left: 30%; }
+  .qqkillqq1gallery .qqkillqq1imgitem:hover .qqkillqq1link {
+    right: 30%; }
+  .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1cover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background-color: black; }
+  .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1lightbox, .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1link {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: -17px;
+    margin-left: -17px;
+    top: 50%;
+    display: block;
+    padding: 2px 2px;
+    border: 0px solid white;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px; }
+    .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1lightbox i, .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1link i {
+      font-size: 30px;
+      color: white; }
+.qqkillqq1gallery .qqkillqq1imgtitle {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  color: #616161 !important;
+  font-size: 14px !important; }
+  .qqkillqq1gallery .qqkillqq1imgtitle:hover {
+    color: #00ccff !important; }
+.qqkillqq1gallery .qqkillqq1imgintro {
+  text-indent: 2em; }
+
+.csstransitions .qqkillqq1gallery, .csstransitions .qqkillqq1gallery * {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+.csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1lightbox, .csstransitions .qqkillqq1gallery .qqkillqq1imgitem .qqkillqq1link {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  display: block; }
+
+.qqkillqq1gallery .bx-wrapper .bx-viewport {border: none !important;left: 0px;height:210px !important;box-shadow:none;padding-left:8px;}
+.qqkillqq1gallery .bx-wrapper { margin: 0 auto; }
+.qqkillqq1gallery .bx-wrapper .bx-prev { left: 0; top: 40%; display: block; text-decoration: none; color: white; position: absolute; width: 50px; height: 80px; font-size: 32px; font-weight: bold; font-family: -self; line-height: 85px; background: rgba(39,40,34,0.5); text-align: center; }
+.qqkillqq1gallery .bx-wrapper .bx-prev:hover { opacity: 1; }
+.qqkillqq1gallery .bx-wrapper .bx-next { right: 0; top: 40%; display: block; text-decoration: none; color: white; background: rgba(39,40,34,0.5); position: absolute; width: 50px; height: 80px;font-size: 32px; line-height: 85px; text-align: center; font-weight: bold; font-family: -self;}
+.qqkillqq1gallery .bx-wrapper .bx-next:hover { opacity: 1; }
+.qqkillqq1gallery .bx-wrapper .bx-pager.bx-default-pager a { display: none; }
+.qqkillqq1gallery .bx-wrapper .bx-controls-direction a { text-indent: 0px; }
+.qqkillqq1gallery .bx-wrapper .bx-controls-direction a.disabled {display: block;}

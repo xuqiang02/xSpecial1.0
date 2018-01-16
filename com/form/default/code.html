@@ -1,0 +1,104 @@
+<div class="infoContent">
+	<div class="leaveInfo">
+		<form id="form1" action="data/form/save1.php" method="post" class="leaveForm">
+			<ul>
+				<li class="fix">
+				<label for="name">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+				<input type="text" name="name" msg="请输入姓名" class="validate[required]" data-errormessage-range-overflow="123123123" data-errormessage-value-missing="请填写姓名">
+				</li>
+				<li class="fix">
+				<label>性&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+				<label class="RadioWrap on_check">
+				<input type="radio" class="inputRadio" checked="checked" name="sex" value="0">男士 </label>
+				<label class="RadioWrap">
+				<input type="radio" class="inputRadio" name="sex" value="1">女士 <input type="hidden" id="gender" name="gender" value="0">
+				</label>
+				</li>
+				<li class="fix">
+				<label for="tel">手&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+				<input type="text" name="mobile" msg="请输入手机" class="validate[required,custom[phone]]" data-errormessage-custom-error="请输入正确的手机号" data-errormessage-value-missing="请填写手机号" _type="mobile">
+				</li>
+				<li class="fix">
+				<label for="province">省&nbsp;&nbsp;&nbsp;&nbsp;份</label>
+				<select name="province" id="sf" _type_="linkage" keys="jxc" next="$('#sf,#cs,#jxs')" msg="请选择省份" class="validate[required]" data-errormessage-value-missing="请选择省份">
+					<option value="">-请选择-</option>
+					<option value="黑龙江">黑龙江</option>
+					<option value="辽宁">辽宁</option>
+					<option value="山东">山东</option>
+					<option value="内蒙古">内蒙古</option>
+					<option value="吉林">吉林</option>
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+					<option value="山西">山西</option>
+					<option value="河北">河北</option>
+					<option value="上海">上海</option>
+					<option value="江苏">江苏</option>
+					<option value="河南">河南</option>
+					<option value="安徽">安徽</option>
+					<option value="海南">海南</option>
+					<option value="广西">广西</option>
+					<option value="江西">江西</option>
+					<option value="湖北">湖北</option>
+					<option value="广东">广东</option>
+					<option value="福建">福建</option>
+					<option value="湖南">湖南</option>
+					<option value="四川">四川</option>
+					<option value="重庆">重庆</option>
+					<option value="青海">青海</option>
+					<option value="新疆">新疆</option>
+					<option value="甘肃">甘肃</option>
+					<option value="西藏">西藏</option>
+					<option value="宁夏">宁夏</option>
+					<option value="云南">云南</option>
+					<option value="贵州">贵州</option>
+					<option value="陕西">陕西</option>
+					<option value="浙江">浙江</option>
+				</select>
+				</li>
+				<li class="fix">
+				<label for="city">城&nbsp;&nbsp;&nbsp;&nbsp;市</label>
+				<select name="city" id="cs" msg="请选择城市" class="validate[required]" data-errormessage-value-missing="请选择城市" _type_="city">
+					<option value="">--城市--</option>
+				</select>
+				</li>
+				<li class="fix">
+				<label for="dealer">预约经销商</label>
+				<select name="other" id="jxs" msg="请选择经销商" class="validate[required]" data-errormessage-value-missing="请选择经销商">
+					<option value="">-请选择-</option>
+				</select>
+				</li>
+				<li class="fix">
+				<label for="carTyle">预约车型</label>
+				<select name="car_type" msg="请选择车型" _type_="[A3 Sportback,A3 Limousine,A4L,A5 Sportback,A5 Coupe,A5 Cabriolet,A6L,A8L,Q3,Q5,Q7]" id="carTyle">
+					<option value="A3 Sportback">A3 Sportback</option>
+					<option value="A3 Limousine">A3 Limousine</option>
+					<option value="A4L">A4L</option>
+					<option value="A5 Sportback">A5 Sportback</option>
+					<option value="A5 Coupe">A5 Coupe</option>
+					<option value="A5 Cabriolet">A5 Cabriolet</option>
+					<option value="A6L">A6L</option>
+					<option value="A8L">A8L</option>
+					<option value="Q3">Q3</option>
+					<option value="Q5">Q5</option>
+					<option value="Q7">Q7</option>
+				</select>
+				<input type="hidden" name="series" id="Carseries" value="a3">
+				</li>
+				<li class="fix">
+				<label for="time">预购车时间</label>
+				<select name="buy_time" msg="请选择购车时间" _type_="[-请选择-,3个月内,4到6个月内,7个月到一年,一年以上,不确定]" class="validate[required]" data-errormessage-value-missing="请选择购车时间">
+					<option value="">-请选择-</option>
+					<option value="3个月内">3个月内</option>
+					<option value="4到6个月内">4到6个月内</option>
+					<option value="7个月到一年">7个月到一年</option>
+					<option value="一年以上">一年以上</option>
+					<option value="不确定">不确定</option>
+				</select>
+				</li>
+				<li class="liBtn fix">
+				<button type="submit" class="submitBtn">立即提交</button>
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>

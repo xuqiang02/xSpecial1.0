@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>any list scroller demo - jQuery scrolling plugin by musings.it to scroll any kind of list with any content - musings.it web design and development</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="css/CSSreset.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="css/als_demo.css" />
+		<link rel="icon"          href="images/favicon.ico" type="image/x-icon" />
+    	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<meta name="robots" content="index,follow" />
+		<meta name="keywords" content="jQuery plugin, jQuery scroller, list jQuery, jQuery lists, css3, html5, jQuery" />
+    	<meta name="description" content="any list scroller demo - jQuery scrolling plugin by musings.it to scroll any kind of list with any content - musings.it web design and development - Bergamo Italy" /> 	
+		<meta name="author" content="Federica Sibella - musings.it" />
+		<meta name="geo.placename" content="via Generale Alberico Albricci 1, 24128 Bergamo, Italy">
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.als-1.2.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() 
+			{
+				$("#lista1").als({
+					visible_items: 4,
+					scrolling_items: 2,
+					orientation: "horizontal",
+					circular: "yes",
+					autoscroll: "yes",
+					interval: 5000,
+					direction: "right",
+					start_from: 5
+				});
+				
+				$("#lista2").als({
+					visible_items: 2,
+					scrolling_items: 1,
+					orientation: "vertical",
+					circular: "no",
+					autoscroll: "no",
+					start_from: 1
+				});
+				
+				//logo hover
+				$("#logo_img").hover(function()
+				{
+					$(this).attr("src","images/als_logo_hover212x110.png");
+				},function()
+				{
+					$(this).attr("src","images/als_logo212x110.png");
+				});
+				
+				//logo click
+				$("#logo_img").click(function()
+				{
+					location.href = "http://als.musings.it/index.php";
+				});
+				
+				$("a[href^='http://']").attr("target","_blank");
+				$("a[href^='http://als']").attr("target","_self");
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<img id="logo_img" src="images/als_logo212x110.png" alt="als logo" title="als logo" />
+				<h1>Any List Scroller <span>demo</span></h1>
+				<br class="esc" />
+				<h2>Do you want to scroll a list? ALS it!</h2>
+			</div>
+		</header>	
+		<section id="content">
+			<h2>Demo 1</h2>
+			<p>This list is composed by classical list elements &lt;ul&gt; e &lt;li&gt;</p>
+			<div id="lista1" class="als-container">
+				<span class="als-prev"><img src="images/thin_left_arrow_333.png" alt="prev" title="previous" /></span>
+				<div class="als-viewport">
+					<ul class="als-wrapper">
+						<li class="als-item"><img src="images/als-images/calculator.png" alt="calculator" title="calculator" />calculator</li>
+						<li class="als-item"><img src="images/als-images/light_bulb.png" alt="light bulb" title="light bulb" />light bulb</li>
+						<li class="als-item"><img src="images/als-images/card.png" alt="card" title="card" />card</li>
+						<li class="als-item"><img src="images/als-images/chess.png" alt="chess" title="chess" />chess</li>
+						<li class="als-item"><img src="images/als-images/clock.png" alt="alarm clock" title="alarm clock" />alarm clock</li>
+						<li class="als-item"><img src="images/als-images/cut.png" alt="scissors" title="scissors" />scissors</li>
+						<li class="als-item"><img src="images/als-images/heart.png" alt="heart" title="heart" />heart</li>
+						<li class="als-item"><img src="images/als-images/map.png" alt="pin" title="pin" />pin</li>
+						<li class="als-item"><img src="images/als-images/mobile_phone.png" alt="mobile phone" title="mobile phone" />mobile phone</li>
+						<li class="als-item"><img src="images/als-images/camera.png" alt="camera" title="camera" />camera</li>
+						<li class="als-item"><img src="images/als-images/music_note.png" alt="music note" title="music note" />music note</li>
+						<li class="als-item"><img src="images/als-images/protection.png" alt="umbrella" title="umbrella" />umbrella</li>
+						<li class="als-item"><img src="images/als-images/television.png" alt="television" title="television" />television</li>
+					</ul>
+				</div>
+				<span class="als-next"><img src="images/thin_right_arrow_333.png" alt="next" title="next" /></span>
+			</div>
+			<h2>Demo 2</h2>
+			<p>This list is composed by generic &lt;div&gt; elements</p>
+			<div id="lista2" class="als-container">
+				<span class="als-prev"><img src="images/thin_top_arrow_333.png" alt="prev" title="previous" /></span>
+				<div class="als-viewport">
+					<div class="als-wrapper">
+						<div class="als-item"><img src="images/als-images/calculator.png" alt="calculator" title="calculator" />calculator</div>
+						<div class="als-item"><img src="images/als-images/light_bulb.png" alt="light bulb" title="light bulb" />light bulb</div>
+						<div class="als-item"><img src="images/als-images/card.png" alt="card" title="card" />card</div>
+						<div class="als-item"><img src="images/als-images/chess.png" alt="chess" title="chess" />chess</div>
+						<div class="als-item"><img src="images/als-images/clock.png" alt="alarm clock" title="alarm clock" />alarm clock</div>
+						<div class="als-item"><img src="images/als-images/cut.png" alt="scissors" title="scissors" />scissors</div>
+						<div class="als-item"><img src="images/als-images/heart.png" alt="heart" title="heart" />heart</div>
+						<div class="als-item"><img src="images/als-images/map.png" alt="pin" title="pin" />pin</div>
+						<div class="als-item"><img src="images/als-images/mobile_phone.png" alt="mobile phone" title="mobile phone" />mobile phone</div>
+						<div class="als-item"><img src="images/als-images/camera.png" alt="camera" title="camera" />camera</div>
+						<div class="als-item"><img src="images/als-images/music_note.png" alt="music note" title="music note" />music note</div>
+						<div class="als-item"><img src="images/als-images/protection.png" alt="umbrella" title="umbrella" />umbrella</div>
+						<div class="als-item"><img src="images/als-images/television.png" alt="television" title="television" />television</div>
+					</div>
+				</div>
+				<span class="als-next"><img src="images/thin_bottom_arrow_333.png" alt="next" title="next" /></span>
+			</div>
+		</section>
+		<footer>
+			<div id="footer">
+				<p>&copy; 2012-2013 Made with &hearts; by <a href="http://www.musings.it/en">musings.it</a> - VAT IT 03611740162 - musings@musings.it - <a href="http://www.twitter.com/musingspuntoit">@musingspuntoit</a> <span>---- don't try to sell <a href="http://als.musings.it">als</a>, it's not nice!</span></p>
+				<p class="ultimo">Thanks to: wonderful icons by <a href="http://dryicons.com">DryIcons</a> -- background texture by <a href="http://subtlepatterns.com/">Subtle Patterns</a></p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+$px-mop_panelHead_paddingv               : 10px !default;         //头部垂直内边距
+$px-mop_panelHead_paddingh               : 10px !default;         //头部水平内边距
+$px-mop_panelHead_marginv                : 0px !default;          //头部垂直外边距
+$px-mop_panelHead_marginh                : 0px !default;          //头部水平外边距
+$color_panelHead_backgroundColor         : #44372E !default;      //头部背景色
+$color_panelHead_gridentStrong           : 0% !default;           //头部渐变强度
+$color_panelHead_broderClolor            : #080000 !default;      //头部边框颜色
+$color_panelHead_broderHoverClolor       : #080000 !default;      //头部激活时边框颜色
+$px-bs_panelHead_borderSize              : 1px !default;          //头部边框大小
+$px-rs_panelHead_radiuSize               : 0px !default;          //头部圆角大小
+$color_panelHead_moreColor               : #35414d !default;      //头部查看更多文字颜色
+$px-fs_panelHead_titleFontSize           : 14px !default;         //头部标题文字大小
+$color_panelHead_titleFontColor          : #ffffff !default;      //头部标题文字颜色
+$px-mop_panelContent_paddingv            : 10px !default;         //内容区垂直内边距
+$px-mop_panelContent_paddingh            : 10px !default;         //内容区水平内边距
+$px-mop_panelContent_marginh             : 0px !default;          //内容区水平外边距
+$color_panelContent_backgroundColor      : #BAB2A5 !default;      //内容区背景色
+$color_panelContent_broderClolor         : #aaaaaa !default;      //内容区边框颜色
+$color_panelContent_broderHoverClolor    : #aaaaaa !default;      //内容区激活时边框颜色
+$px-bs_panelContent_borderSize           : 1px !default;          //内容区边框大小
+$px-rs_panelContent_radiuSize            : 10px !default;         //内容区圆角大小

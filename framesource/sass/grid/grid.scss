@@ -1,0 +1,295 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/box-sizing";
+@import "../base/_setting";
+@import "_grid-config";
+@mixin corl($width,$space){
+	%grid_px_layout{
+		position: relative;
+		float: left;
+		min-height:1px;
+		margin-left: $space;
+		@if $bool_ie7{}
+		@else{
+			@include box-sizing(border-box);
+		}
+	}
+	@for $i from 1 to 13{
+		.#{$superbird-prefix}span#{$i}{
+			width:$width/12*($i)-$space;
+			@extend %grid_px_layout;
+		}
+		.#{$superbird-prefix}offset#{$i}{
+			margin-left:$width/12*($i) + $space;
+		}
+	}
+	@if($bool_use_assist_grid){
+		@for $i from 1 to $number_assist_grid+1{
+			.#{$superbird-prefix}col#{$i}{
+				width:$width/($number_assist_grid)*($i)-$space;
+				@extend %grid_px_layout;
+			}
+			.#{$superbird-prefix}shift#{$i}{
+				margin-left:$width/($number_assist_grid)*($i) + $space;
+			}
+		}	
+	}
+	@if $bool_use_metro_grid{
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}.#{$superbird-prefix}metro{
+				height:$width/12*($i)-$space;
+				line-height:$width/12*($i)-$space;
+				text-align:center;
+			}
+		}
+		[class="#{$superbird-prefix}span"].#{$superbird-prefix}metro.text-default,
+		[class="#{$superbird-prefix}col"].#{$superbird-prefix}metro.text-default{
+			line-height:auto;
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}.#{$superbird-prefix}metro{
+					height:$width/($number_assist_grid)*($i)-$space;
+					line-height:$width/($number_assist_grid)*($i)-$space;
+					text-align:center;
+				}
+			}	
+		}
+	}
+	.#{$superbird-prefix}row{
+		margin-left:$space * -1;
+		position: relative;
+		@include pie-clearfix;
+	}
+	.#{$superbird-prefix}row-top,.#{$superbird-prefix}grid-top{
+		margin-top:$space;
+	}
+	.#{$superbird-prefix}row-bottom,.#{$superbird-prefix}grid-bottom{
+		margin-bottom: $space;
+	}
+	.#{$superbird-prefix}container{
+		width:$width - $space;
+		margin:0px auto;
+	}
+}
+@mixin grid_broder($space){
+	$direction:"top" "left" "bottom" "right";
+	.#{$superbird-prefix}row-border{
+		margin-left:($space * -1) - $width_grid_border * 2;
+		border:$width_grid_border $borderstyle_grid_border $color_grid_border;
+		@each $i in $direction{
+			&.no-#{$i}{
+				border-#{$i}:none;
+			}
+			&.only-#{$i}{
+				border:none;
+				border-#{$i}:$width_grid_border $borderstyle_grid_border $color_grid_border;
+			}
+		}
+		&.no-right,&.no-left,&.only-right,&.only-left{
+			margin-left:($space * -1) - $width_grid_border;
+		}
+	}
+	.#{$superbird-prefix}grid-border{
+		@if $bool_ie7{
+			margin-left:$space - $width_grid_border * 2 !important;
+			&.no-right,&.no-left,&.only-right,&.only-left{
+				margin-left:$space - $width_grid_border;
+			}
+		}
+		border:$width_grid_border $borderstyle_grid_border $color_grid_border;
+		@each $i in $direction{
+			&.no-#{$i}{
+				border-#{$i}:none;
+			}
+			&.only-#{$i}{
+				border:none;
+				border-#{$i}:$width_grid_border $borderstyle_grid_border $color_grid_border;
+			}
+		}
+		
+	}
+}
+@mixin grid_fluid($space,$space2){
+	.#{$superbird-prefix}container-fluid{
+		padding-left:$space2;
+		padding-right:$space2;
+	}
+	.#{$superbird-prefix}row-fluid{
+		position: relative;
+		width:( 1 + $space) * 100%;
+		margin-left: $space * -100%;
+		@include pie-clearfix;
+		%grid_layout{
+			float: left;
+			min-height:1px;
+			position: relative;
+			margin-left:$space * 100%;
+		}
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}{
+				width: ($i /12 - $space)*100%;
+				*width: ($i /12 - $space)*100% - 0.5%; 
+				@extend %grid_layout;
+			}
+			.#{$superbird-prefix}offset#{$i}{
+				margin-left:(1/12 * $i + $space)*100%;
+			}
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}{
+					width:($i / $number_assist_grid - $space )*100%;
+					@extend %grid_layout;
+				}
+				.#{$superbird-prefix}shift#{$i}{
+					margin-left:($i / $number_assist_grid + $space)*100%;
+				}
+			}	
+		}
+	}
+}
+@mixin grid_equally{
+	.#{$superbird-prefix}row-equally{
+		width:100;
+		position: relative;
+		@include pie-clearfix;
+		%grid_equally_layout{
+		  	float: left;
+			min-height:1px;
+			position: relative;
+			margin-left:0px;
+		}
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}{
+				width: ($i /12 )*100%;
+				*width: ($i /12 )*100% - 0.5%;
+				@extend %grid_equally_layout;
+			}
+			.#{$superbird-prefix}offset#{$i}{
+				margin-left:($i /12 )*100%;
+			}
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}{
+					width:(1/($number_assist_grid)*($i))*100%;
+					@extend %grid_equally_layout;
+				}
+				.#{$superbird-prefix}shift#{$i}{
+					margin-left:(1/($number_assist_grid)*($i))*100%;
+				}
+			}	
+		}
+	}
+}
+@mixin grid_phone{
+    .#{$superbird-prefix}container {
+        width: auto;
+        margin-left:10px;
+        margin-right:10px;
+    }
+    .#{$superbird-prefix}row{
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    .#{$superbird-prefix}row,.#{$superbird-prefix}row-fluid,.#{$superbird-prefix}row-equally{
+    	[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col']{
+    		display: block;
+	        float: none;
+	        width: 100%;
+	        margin-left: 0px;
+	        margin-right: 0px;
+	        -webkit-box-sizing: border-box;
+	           -moz-box-sizing: border-box;
+	                box-sizing: border-box;
+    	}
+    }
+    @if $bool_use_grid_phone{
+    	.#{$superbird-prefix}row.#{$superbird-prefix}grid-phone,.#{$superbird-prefix}row-fluid.#{$superbird-prefix}grid-phone,.#{$superbird-prefix}row-equally.#{$superbird-prefix}grid-phone{
+			position: relative;
+			width:( 1 + $width_grid_space/$width_container) * 100%;
+			margin-left: ($width_grid_space/$width_container) * -100%;
+			@include pie-clearfix;
+			[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col']{
+			  	float: left;
+				min-height:1px;
+				position: relative;
+			}
+			@for $i from 1 to 13{
+				.#{$superbird-prefix}span#{$i}{
+					width: ($i /12 - ($width_grid_space/$width_container))*100%;
+					*width: ($i /12 - ($width_grid_space/$width_container))*100% - 0.5%; 
+					margin-left:($width_grid_space/$width_container) * 100%;
+				}
+				.#{$superbird-prefix}offset#{$i}{
+					margin-left:(1/12 * $i + ($width_grid_space/$width_container))*100%;
+				}
+			}
+			@if($bool_use_assist_grid){
+				@for $i from 1 to $number_assist_grid+1{
+					.#{$superbird-prefix}col#{$i}{
+						width:($i / $number_assist_grid - ($width_grid_space/$width_container) )*100%;
+					}
+					.#{$superbird-prefix}shift#{$i}{
+						margin-left:($i / $number_assist_grid + ($width_grid_space/$width_container))*100%;
+					}
+				}	
+			}
+    	}
+    }
+    .#{$superbird-prefix}grid-border,.#{$superbird-prefix}row-border{
+    	margin-left:0px !important;
+    }
+    [class*="#{$superbird-prefix}shift"],[class*="#{$superbird-prefix}offset"]{
+        margin-left:0px;
+    }
+    .#{$superbird-prefix}row-top,.#{$superbird-prefix}grid-top{
+    	margin-top:$width_grid_space_phone;
+    }
+    .#{$superbird-prefix}row-bottom,.#{$superbird-prefix}grid-bottom{
+    	margin-bottom: $width_grid_space_phone;
+    }
+}
+@include corl($width_container,$width_grid_space);
+@if($bool_use_grid_border){
+	@include grid_broder($width_grid_space);
+}
+@if($bool_use_fluid_grid){
+	@include grid_fluid($width_grid_space/$width_container,$width_grid_space);
+}
+
+@if $bool_response{
+	@media (min-width:$width_container_pc){
+		@include corl($width_container_pc,$width_grid_space_pc);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_pc);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_pc/$width_container_pc,$width_grid_space_pc);
+		}
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		@include corl($width_container_pad,$width_grid_space_pad);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_pad);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_pad/$width_container_pad,$width_grid_space_pad);
+		}
+	}
+	@media (max-width: 767px){
+		@include corl($width_container_phone,$width_grid_space_phone);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_phone);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_phone/$width_container_phone,$width_grid_space_phone);
+		}
+	}
+	@media (max-width: 480px){
+		@include grid_phone;
+	}
+}
+@if($bool_use_equally_grid){
+	@include grid_equally;
+}

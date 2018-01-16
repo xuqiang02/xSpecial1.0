@@ -1,0 +1,5 @@
+.als-container{position:relative;width:100%;margin:0 auto}
+.als-viewport{position:relative;overflow:hidden;margin:0 auto}
+.als-wrapper{position:relative;list-style:none}
+.als-item{position:relative;display:block;text-align:center;cursor:pointer;float:left}
+.als-prev,.als-next{position:absolute;cursor:pointer;clear:both}

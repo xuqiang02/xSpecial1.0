@@ -1,0 +1,113 @@
+﻿@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+
+.policy {
+	padding: 20px 20px 0;
+
+	.stitle {
+		margin:0;
+		font-size: 24px;
+		.icon-policy {
+		    display: inline-block;
+		    width: 50px;
+		    height: 50px;
+		    margin-right: 20px;
+		    vertical-align: middle;
+		    background: #000;
+		    transition: background .6s;
+		    -ms-transition: background .6s;
+		    -webkit-transition: background .6s;
+		    -moz-transition: background .6s;
+		    -o-transition: background .6s;
+		}
+		.icon-down {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			margin-right: 20px;
+			vertical-align: middle;
+			background: #000;
+			transition: background .6s;
+			-ms-transition: background .6s;
+			-webkit-transition: background .6s;
+			-moz-transition: background .6s;
+			-o-transition: background .6s;
+			 background: url('./images/icon.png') no-repeat -32px -57px;
+		}
+
+	}
+
+	.policyCon {
+		float: left;
+    	width: 100%;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		box-sizing:border-box;
+		.sstitle {
+			font-size: 26px;
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+
+		.ssdesc {
+			font-size: 16px;
+			margin-bottom: 54px;
+		}
+
+		.left {
+			float: left;
+			width: 48%;
+			padding-right:2%;
+		}
+
+		.right {
+			float: right;
+			width: 48%;
+			padding-left:2%;
+		}
+
+		li {
+			margin-bottom: 34px;
+		}
+
+		.smtitle {
+			padding-left: 18px;
+			font-size: 19px;
+			margin-bottom: 7px;
+			position: relative;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 11px;
+				height: 22px;
+				background: #d13541;
+				position: absolute;
+				left: 0;
+				top: 0
+			}
+
+		}
+
+		.smcon {
+			font-size: 15px;
+			padding-left: 18px;
+			line-height: 30px
+		}
+
+		.smconDot {
+			padding-left: 32px;
+			position: relative;
+
+			&:before {
+				content: ".";
+				font-size: 30px;
+				position: absolute;
+				left: 18px;
+				top: -10px;
+			}
+		}
+	}
+}

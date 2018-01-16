@@ -1,0 +1,75 @@
+//color
+$color_red:            #DE000F;
+$color_orange:         #F46E15;
+$color_yellow:         #F7A100;
+$color_green:          #20a135;
+$color_coffee:         #7d5d3b;
+$color_blue:           #0086e3;
+$color_purple:         #720e9e;
+$color_black:          #363636;
+$color_white:          #fbfbfb;
+$color_gray:           #d6d6d6;
+
+$color_base1:          #a2df8e;
+$color_base2:          #ffaa00;
+$color_base3:          #585858;
+
+
+
+
+//framwork preixname
+$superbird-prefix:"sb-";
+
+
+//response
+$bool_response:true;
+$glow_color: #2c9adb;
+$namespace_glow: '.glow';
+//grid
+$bool_use_assist_grid:false;
+$bool_use_fluid_grid:false;
+$bool_use_equally_grid:false;
+$bool_use_metro_grid:false;
+$bool_use_grid_phone:true;
+
+$number_assist_grid:20;
+
+$width_container_pc:1200px;
+$width_container:960px;
+$width_container_pad:780px;
+$width_container_phone:480px;
+
+$width_grid_space_pc:20px;
+$width_grid_space:16px;
+$width_grid_space_pad:13px;
+$width_grid_space_phone:8px;
+
+
+
+$bool_use_grid_border:false;
+$width_grid_border:1px;
+$color_grid_border:red;
+$borderstyle_grid_border:solid;
+
+//button
+$namespace_button: '.btn'; //prefix for all classes
+$color_button_default: $color_base1;
+$height_button: 32px;
+$color_button_font: #666;
+$size_button_font: 14px;
+$weight_button_font: 300;
+$string_button_fontfamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$arr_button_color:
+('red' $color_red showbw($color_red))
+('orange' $color_orange showbw($color_orange))
+('yellow' $color_yellow showbw($color_yellow))
+('green' $color_green showbw($color_green))
+('coffee' $color_coffee showbw($color_coffee))
+('blue' $color_blue showbw($color_blue))
+('purple' $color_purple showbw($color_purple))
+('black' $color_black showbw($color_black))
+('white' $color_white showbw($color_white))
+('gray' $color_gray showbw($color_gray));
+$arr_button_styles: 'rounded' 'pill' 'circle';
+$arr_button_sizes: 'large' 'small' 'tiny';
+$size_button_circle: 120px; 

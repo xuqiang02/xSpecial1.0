@@ -1,0 +1,23 @@
+$glow_color: #2c9adb;
+$namespace_glow: '.glow';
+$namespace_button: '.btn'; 
+$color_button_default: $color_base1;
+$height_button: 32px;
+$color_button_font: #666;
+$size_button_font: 14px;
+$weight_button_font: 300;
+$string_button_fontfamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$arr_button_color:
+('red' $color_red showbw($color_red))
+('orange' $color_orange showbw($color_orange))
+('yellow' $color_yellow showbw($color_yellow))
+('green' $color_green showbw($color_green))
+('coffee' $color_coffee showbw($color_coffee))
+('blue' $color_blue showbw($color_blue))
+('purple' $color_purple showbw($color_purple))
+('black' $color_black showbw($color_black))
+('white' $color_white showbw($color_white))
+('gray' $color_gray showbw($color_gray));
+$arr_button_styles: 'rounded' 'pill' 'circle';
+$arr_button_sizes: 'large' 'small' 'tiny';
+$size_button_circle: 120px; 

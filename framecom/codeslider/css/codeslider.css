@@ -1,0 +1,523 @@
+/* ***********************************************************
+   ****************** CODESLIDER STYLE ***********************
+   *********************************************************** */
+
+
+/*  Codeslider - core
+============================================================== */
+    
+    /* Codeslider basic
+    ---------------------------------------------------------- */
+    .cs                     { visibility: hidden; }
+    .cs-ready               { visibility: visible; }
+    .cs-hide                { display: none !important; }
+
+    .cs-viewport            { overflow: hidden; }
+    .ie7 .cs-viewport       { position: relative; }
+
+    .cs-canvas {
+        overflow: visible !important;
+        position: relative;
+        margin-bottom: 0;
+        -webkit-transition-property: -webkit-transform;
+           -moz-transition-property:    -moz-transform;
+                transition-property:         transform;
+    }
+
+    .cs-slide {
+        position: absolute;
+        display: block;
+        float: left;
+        left: 0; top: 0;
+        margin-bottom: 0;
+    }
+    .cs-slide.sl-hfit       { height: 100% !important; }
+
+    /* None select */
+    .cs-nav, .cs-pag {
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+    }
+
+
+
+    /* Height type
+    ---------------------------------------------------------- */
+    .height-max .cs-slide, .height-min .cs-slide {
+        -webkit-transition: top .2s;
+           -moz-transition: top .2s;
+                transition: top .2s;
+    }
+
+
+    
+    /* Navigation
+    ---------------------------------------------------------- */
+    .cs-next, .cs-prev { cursor: pointer; }
+    .cs-prev.in-actived, .cs-next.in-actived { opacity: 0.5 }
+
+
+
+
+    /* Pagination
+    ---------------------------------------------------------- */
+    .cs-pag { float: left; }
+    .cs-pagitem {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
+
+
+    /* Thumbnail
+    ---------------------------------------------------------- */
+    .cs-thumb .pagnum { display: none; }
+
+    .cs-thumb .thumb { overflow: hidden; position: relative; width: 50px; height: 50px; }
+    .cs-thumb .thumb > img { display: block; position: relative; }
+    .cs-thumb .thumb.fit-width > img { width: 100%; height: auto; }
+    .cs-thumb .thumb.fit-height > img { width: auto; height: 100%; }
+    .cs-thumb .thumb > img { -webkit-transform: translateZ(0); } /* Chrome image fix */
+
+
+
+    
+
+    /* Icon loader
+    ---------------------------------------------------------- */
+    .cs-slide.loading {
+        position: relative;
+        width: 100%; height: 100%;
+    }
+    
+    .cs-loader {
+        position: absolute;
+        width: 24px; height: 24px;
+        left: 50%; top: 50%;
+        margin-left: -12px; margin-top: -12px;
+        text-indent: -9999px;
+    }
+
+    .cs-loader:before, .cs-loader:after {
+        content: "";
+        display: block;
+        position:absolute;
+        left: 0;
+    }
+
+    .cs-loader:before {
+        height: 1px; width: 24px;
+        top: 11px;
+        background-color: hsla(0,0%,100%,.5);
+    }
+
+    .cs-loader:after {
+        width:5px; height:5px;
+        top:9px;
+        
+        background-color:#000;
+        border-radius: 100%;
+
+        -webkit-animation: loaderBall .3s infinite linear;
+           -moz-animation: loaderBall .3s infinite linear;
+                animation: loaderBall .3s infinite linear;
+    }
+    @-webkit-keyframes loaderBall {
+        0%   { -webkit-transform: translateX(0); }
+        50%  { -webkit-transform: translateX(21px); }
+        100% { -webkit-transform: translateX(0); }
+    }
+    @-moz-keyframes loaderBall {
+        0%   { -moz-transform: translateX(0); }
+        50%  { -moz-transform: translateX(21px); }
+        100% { -moz-transform: translateX(0); }
+    }
+    @keyframes loaderBall {
+        0%   { transform: translateX(0); }
+        50%  { transform: translateX(21px); }
+        100% { transform: translateX(0); }
+    }
+
+
+    /* Icon loader fallback - using image */
+    .cs-old .cs-loader { background: url(../images/loader_dot.gif) no-repeat; }
+    .cs-old .cs-loader:after, .cs-old .cs-loader:before { display: none; }
+
+
+
+
+
+    /* Overlay
+    ---------------------------------------------------------- */
+    .cs-viewport { position: relative; }
+    .cs-overlay {
+        position: absolute;
+        width: 100% !important; height: 100% !important;
+        left: 0; top: 0;
+
+        background: url(../images/pattern_dot_dark.png) repeat;
+    }
+
+
+
+    /* Timer default
+    ---------------------------------------------------------- */
+    /* Timer bar */
+    .cs-timer.timer-bar {
+        overflow: hidden;
+        width: 100%; height: 3px;
+    }
+    .cs-timer.timer-bar > .bar {
+        display: block;
+        position: absolute;
+        width: 100%; height: 100%;
+        top: 0; left: 0;
+        background-color: #333;
+    }
+
+    /* Timer arc */
+    .cs-timer.timer-arc { width: 40px; height: 40px; }
+
+    /* Timer number */
+    .cs-timer.timer-number {}
+
+
+
+
+
+    /* Grab pointer
+    ---------------------------------------------------------- */
+    .cs-viewport.cursor-grab,
+    .slide-as-pag .cs-viewport.cursor-grab .sl-cur {
+        cursor: url(../images/grab.cur), e-resize;                               /* For IE9-10. if css & html not in same folder -> setup parent folder */
+        cursor: url(../images/grab.png) 16 16, url(../images/grab.cur), e-resize;     /* IE7-8 & Modern browser */
+    }
+
+    .cs-viewport.cursor-grabbing,
+    .slide-as-pag .cs-viewport.cursor-grabbing .sl-cur {
+        cursor: url(../images/grabbing.cur), e-resize;                                   /* For IE9-10. if css & html not in same folder -> setup parent folder */
+        cursor: url(../images/grabbing.png) 16 16, url(../images/grabbing.cur), e-resize;     /* IE7-8 & Modern browser */
+    }
+
+
+
+    /* Grab stop
+    ---------------------------------------------------------- */
+    .cs-grabstop { position: relative; }
+    .cs-grabstop:before, .cs-grabstop:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 60px; height: 100%;
+        top: 0;
+        
+        -webkit-transition: -webkit-transform 0.6s;
+           -moz-transition:    -moz-transform 0.6s;
+                transition:         transform 0.6s;
+
+        -webkit-transform: translateX(0);
+           -moz-transform: translateX(0);
+                transform: translateX(0);
+    }
+
+    .cs-grabstop:before {
+        left: -60px;
+        background: -webkit-linear-gradient(left, hsla(192,100%,50%,.2), hsla(0,0%,100%,0));
+        background:    -moz-linear-gradient(left, hsla(192,100%,50%,.2), hsla(0,0%,100%,0));
+        background:     -ms-linear-gradient(left, hsla(192,100%,50%,.2), hsla(0,0%,100%,0));
+    }
+    .cs-grabstop:after {
+        right: -60px;
+        background: -webkit-linear-gradient(left, hsla(0,0%,100%,0), hsla(192,100%,50%,.2));
+        background:    -moz-linear-gradient(left, hsla(0,0%,100%,0), hsla(192,100%,50%,.2));
+        background:     -ms-linear-gradient(left, hsla(0,0%,100%,0), hsla(192,100%,50%,.2));
+    }
+
+    .cs-grabstop.stop-left:before {
+        -webkit-transform: translateX(100%);
+           -moz-transform: translateX(100%);
+                transform: translateX(100%);
+    }
+    .cs-grabstop.stop-right:after {
+        -webkit-transform: translateX(-100%);
+           -moz-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+
+
+
+    /* Image
+    ---------------------------------------------------------- */
+    .cs-canvas img { display: block; }
+
+
+
+    /* Video
+    ---------------------------------------------------------- */
+    .cs-citeplay {
+        position: absolute;
+        width: 80px; height: 80px;
+        left: 0; top: 50%;
+        margin-left: -40px; margin-top: -40px;
+
+        background-color: #fff;
+        background-color: hsla(0,0%,100%,.5);
+    }
+    .cs-citeplay:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0; height: 0;
+        left: 26px; top: 16px; 
+        
+        border: solid transparent;
+        border-width: 24px 0 24px 34px;
+        border-left-color: white;
+    }
+    
+
+
+    /* Overlay
+    ---------------------------------------------------------- */
+    .cs-overlay > img { display: block; width: 100%; height: auto; }
+
+
+    /* Shadow
+    ---------------------------------------------------------- */
+    .cs-shadow {
+        position: absolute;
+        left: 0; top: 100%;
+        z-index: -1;
+    }
+    .cs-shadow > img { display: block; width: 100%; height: auto; }
+
+
+
+
+    /* Layout line && dot
+    ---------------------------------------------------------- */
+    img.cs-hide { display: none !important; }
+    .cs-line .cs-slide, .cs-dot .cs-slide { overflow: hidden; }
+
+    .cs-line .cs-img, .cs-dot .cs-img {
+        position: relative;
+        float: left;
+        left: 50%; top: 0;
+
+        font-size: 0;
+        letter-spacing: -.3em;
+    }
+    .cs-line .cs-img img, .cs-dot .cs-img img {
+        display: block;
+        position: relative;
+        left: -50%; top: 0;
+    }
+
+
+
+    /* Layout custom
+    ---------------------------------------------------------- */
+    .cs-free .cs-viewport { overflow: visible; }
+    .slide-as-pag .cs-slide { cursor: pointer; }
+
+    
+
+
+    /* layer
+    ---------------------------------------------------------- */
+    .cs-layer {
+        visibility: hidden;
+        position: absolute;
+        left: 0; top: 0;
+        white-space: nowrap;
+
+        -webkit-transition-property: -webkit-transform, opacity;
+           -moz-transition-property:    -moz-transform, opacity;
+                transition-property:         transform, opacity;
+    }
+    .cs-slide.cs-ready .cs-layer { visibility: visible; }
+    .cs-layerghost { visibility: hidden; }
+
+
+
+
+    /* Effect core
+    ---------------------------------------------------------- */
+    .cs-dot .cs-canvas { overflow: hidden; }
+    .cs-dot .cs-slide { visibility: hidden; }
+    .cs-dot .cs-slide.sl-cur { visibility: visible; }
+
+
+    .fx-overlay { position: absolute; left: 50%; }
+    .fx-inner { position: relative; left: -50%; }
+
+    .cs-dot .fx-front { overflow: hidden; position: absolute; }
+    .fx-front .cs-img { overflow: hidden; position: absolute; left: 0; }
+    .fx-front .cs-img > img { left: 0; }
+
+    .fx-back { position: absolute; overflow: hidden; width: 100%; }
+    .fx-back .cs-img, .fx-back .cs-img > img { left: 0; }
+
+
+
+
+    /* Effect RectMove
+    ---------------------------------------------------------- */
+    .cs-rectMove .fx-inner,
+    .cs-move .fx-inner { overflow: hidden; }
+
+
+
+
+
+
+
+/*  Codeslider - default
+============================================================== */
+    .cs-default { position: relative; }
+
+
+    /* Navigation default
+    ---------------------------------------------------------- */
+    .cs-default .cs-prev, .cs-default .cs-next {
+        position: absolute;
+        display: block;
+        width: 50px; height: 50px;
+        top: 50%; margin-top: -25px;
+        opacity: .2;
+        background: url(../images/icon.png) no-repeat;
+        text-indent: -9999px;
+    }
+    .cs-default .cs-prev {
+        left: 10px;
+        background-position: 0 0;
+    }
+    .cs-default .cs-next {
+        right: 10px;
+        background-position: -50px 0;
+    }
+    .cs-default .cs-prev:hover, .cs-default .cs-next:hover {
+        opacity: 1;
+    }
+
+
+
+    /* Pagination default
+    ---------------------------------------------------------- */
+    .cs-default .cs-pagwrap {
+        position: absolute;
+        left: 50%; bottom: 10px;
+    }
+    .cs-default .cs-pag {
+        position: relative;
+        left: -50%; top: 0;
+    }
+    .cs-default .cs-pagitem {
+        position: relative;
+        width: 8px; height: 8px;
+        margin-left: 3px; margin-right: 3px;
+
+        background-color: #333;
+        background-color: hsla(0,0%,0%,.5);
+        border-radius: 100%;
+        text-indent: -9999px;
+    }
+    .cs-default .cs-pagitem:hover, .cs-default .cs-pagitem.sl-cur {
+        background-color: #fff;
+        box-shadow: 0 0 0 2px hsla(0,0%,0%,.5);
+    }
+
+
+    
+    /* Thumbnail default
+    ---------------------------------------------------------- */
+    .cs-default .cs-thumb .thumb {
+        overflow: visible;
+        left: -47px ; top: 0;
+        margin-top: -10px;
+        visibility: hidden;
+        opacity: 0;
+        border: 2px solid #fff;
+
+        -webkit-transition: -webkit-transform .3s, opacity .3s;
+           -moz-transition:    -moz-transform .3s, opacity .3s;
+                transition:         transform .3s, opacity .3s;
+        -webkit-transform: translateY(-75%) scale(.5);
+           -moz-transform: translateY(-75%) scale(.5);
+                transform: translateY(-75%) scale(.5);
+    }
+    .cs-default .cs-thumb .thumb:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0; height: 0;
+        left: 50%; top: 100%;
+        margin-left: -5px; margin-top: 2px;
+
+        border: 4px solid transparent;
+        border-top-color: #fff;
+    }
+    .cs-default .cs-thumb .cs-pagitem:hover .thumb {
+        visibility: visible;
+        opacity: 1;
+        
+        -webkit-transform: translateY(-100%) scale(1);
+           -moz-transform: translateY(-100%) scale(1);
+                transform: translateY(-100%) scale(1);
+    }
+
+
+
+    /* Timer default
+    ---------------------------------------------------------- */
+    .cs-default .cs-timer { position: absolute; }
+
+    /* Timer bar */
+    .cs-default .timer-bar { left: 0; bottom: 0;}
+    .cs-default .timer-bar > .bar { background-color: hsla(0,0%,100%,.5); }
+
+    /* Timer arc */
+    .cs-default .timer-arc { right: 0; top: 0; }
+    
+    /* Timer number */
+    .cs-default .timer-number {
+        font-size: 11px;
+        line-height: 22px;
+        text-align: center;
+        color: #fff;
+        
+        width: 17px; height: 20px;
+        margin: 12px;
+        padding-left: 3px;
+        right: 0; bottom: 0;
+    }
+    .cs-default .timer-number:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%; height: 100%;
+        left: 0; top: 0;
+        border: 2px solid transparent;
+        border-top-color: hsla(0,0%,100%,.25);
+        border-bottom-color: hsla(0,0%,100%,.25);
+        border-radius: 100%;
+
+        -webkit-animation: timerNumber .3s infinite linear;
+           -moz-animation: timerNumber .3s infinite linear;
+                animation: timerNumber .3s infinite linear;
+    }
+    
+    @-webkit-keyframes timerNumber {
+        0%   { -webkit-transform: rotate(0); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    @-moz-keyframes timerNumber {
+        0%   { -moz-transform: rotate(0); }
+        100% { -moz-transform: rotate(360deg); }
+    }
+    @keyframes timerNumber {
+        0%   { transform: rotate(0); }
+        100% { transform: rotate(360deg); }
+    }

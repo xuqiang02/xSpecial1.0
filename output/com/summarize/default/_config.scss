@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";
+$bool_all_border               : false !default;           //是否显示边框
+$color_all_bordercolor         : #f90 !default;            //边框颜色
+$px_1-10_all_bordersize        : 0px !default;             //边框大小
+$px_1-20_all_radius            : 0px !default;             //圆角大小
+$color_title_bgcolor           : #0cadbf !default;         //背景色
+$px_10-50_title_fontsize       : 16px !default;            //字体大小
+$color_title_fontcolor         : #fff !default;            //字体颜色
+$bool_title_fontweight         : false !default;           //是否字体加粗
+$px_30-100_title_lineheight    : 50px !default;            //高度
+$px_0-50_title_leftpadding     : 10px !default;            //左间距
+$color_list_bgcolor            : #f5f5f5 !default;         //背景色
+$px_30-100_list_listheight     : 45px !default;            //高度
+$px_0-50_list_leftpadding      : 10px !default;            //左间距
+$color_list_fontcolor          : #000 !default;            //字体颜色
+$px_10-50_list_fontsize        : 12px !default;            //字体大小
+$color_list_bottomborder       : #ccc !default;            //下边框色
+$px_0-10_list_bottomsize       : 1px !default;             //下边框大小
+$color_listhover_bgcolor       : #fff !default;            //激活背景色
+$color_listhover_bordercolor   : #0cadbf !default;         //激活左边框色
+$color_listhover_bordersize    : 3px !default;             //激活边框大小
+$color_listhover_fontcolor     : #0cadbf !default;         //激活字体色

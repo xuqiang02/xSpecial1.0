@@ -1,0 +1,13 @@
+#scd_product1 { margin-top: 10px; }
+#scd_product1 .span3 { text-align: center; }
+#scd_product1 .span3 ul { display: inline-block; }
+#scd_product1 .span3 ul li { position: relative; max-width: 345px; max-height: 280px; }
+#scd_product1 .span3 ul li img { width: 100%; height: 100%; max-width: 345px; max-height: 280px; }
+#scd_product1 .scd_product_txt { background-color: white; overflow: hidden; text-align: left; padding: 10px; }
+#scd_product1 .scd_product_txt a { color: #777777; margin-left: 25px; font-size: 12px; }
+#scd_product1 .scd_product_txt a:hover { text-decoration: underline; }
+#scd_product1 .arrow-top { position: absolute; bottom: 0px; left: 47%; height: 0; width: 0; border-style: solid; border-width: 0px 7px 7px 7px; border-color: transparent transparent white transparent; }
+#scd_product1 .scd_hoverdiv { width: 100%; height: 100%; background-color: #fff; filter: alpha(opacity=90); -moz-opacity: 0.9; opacity: 0.9; position: absolute; top: 0px; left: 0px; display: none; text-align: center; }
+#scd_product1 .scd_hoverdiv a { display: inline-block; width: 70px; height: 70px; border-radius: 40px; background-color: #00ccff; color: #fff; margin-top: 30%; }
+#scd_product1 .scd_hoverdiv a i { color: white; display: block; font-size: 18px; line-height: 70px; }
+#scd_product1 .scd_hoverdiv a:hover { -webkit-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275); -moz-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275); -o-animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275); animation: avia_pop_small 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275); }

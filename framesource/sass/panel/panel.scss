@@ -1,0 +1,55 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/color/contrast";
+@import "../base/_anim";
+@import "../base/_setting";
+@import "_panel-config";
+@import "_panel-var";
+.#{$superbird-prefix}panel{
+	.#{$superbird-prefix}panel-head{
+		$panelHead_padding:($px-mop_panelHead_paddingv $px-mop_panelHead_paddingh);
+		$panelHead_margin:($px-mop_panelHead_marginv $px-mop_panelHead_marginh);
+		$panelHead_border:($px-bs_panelHead_borderSize,($color_panelHead_broderClolor,$color_panelHead_broderHoverClolor),"center") ;
+		$panelHead_radius:"";
+		@if $px-mop_panelHead_marginv == 0{
+			$panelHead_radius:($px-rs_panelHead_radiuSize,"top");
+		}
+		@else{
+			$panelHead_radius:($px-rs_panelHead_radiuSize,"center");
+		}
+		$panelHead_background:$color_panelHead_backgroundColor;
+		@include return_BlockStyle($panelHead_padding,$panelHead_margin,$panelHead_border,$panelHead_radius,$panelHead_background);
+		@if ($color_panelHead_gridentStrong>0 and $color_panelHead_backgroundColor!="transparent") {
+			@include background-image(linear-gradient(lighten($color_panelHead_backgroundColor,$color_panelHead_gridentStrong), darken($color_panelHead_backgroundColor,$color_panelHead_gridentStrong)));
+			@include filter-gradient(lighten($color_panelHead_backgroundColor,$color_panelHead_gridentStrong), darken($color_panelHead_backgroundColor,$color_panelHead_gridentStrong));
+		}
+		@include pie-clearfix;
+		.#{$superbird-prefix}title{
+			float: left;
+			font-size: $px-fs_panelHead_titleFontSize;
+			color:$color_panelHead_titleFontColor;
+		}
+		.#{$superbird-prefix}more{
+			color:$color_panelHead_moreColor !important;
+			float:right;
+		}
+	}
+	.#{$superbird-prefix}panel-content{
+		$panelContent_padding:($px-mop_panelContent_paddingv $px-mop_panelContent_paddingh);
+		$panelContent_margin:(0 $px-mop_panelContent_marginh);
+		$panelContent_border:($px-bs_panelContent_borderSize,($color_panelContent_broderClolor,$color_panelContent_broderHoverClolor),"center") ;
+		$panelContent_radius:"";
+		@if $px-mop_panelHead_marginv==0{
+			$panelContent_radius:($px-rs_panelContent_radiuSize,"bottom");
+		}
+		@else{
+			$panelContent_radius:($px-rs_panelContent_radiuSize,"center");
+		}
+		$panelContent_background:$color_panelContent_backgroundColor;
+		@include return_BlockStyle($panelContent_padding,$panelContent_margin,$panelContent_border,$panelContent_radius,$panelContent_background);
+		@if $px-mop_panelHead_marginv == 0{
+			border-top:none;
+		}
+		
+	}
+}

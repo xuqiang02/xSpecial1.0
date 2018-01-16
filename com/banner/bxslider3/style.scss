@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+// $color_circle_circlecolor          : #a8f4ea !default;        //颜色
+// $color_circle_circlehovercolor     : #f3836b !default;        //激活色
+// $px_0-20_circle_circlewidth        : 12px !default;           //宽度
+// $px_0-20_circle_circleheight       : 12px !default;           //高度
+// $px_0-10_circle_circleradius       : 6px !default;            //圆角
+// $px_0-20_circle_circlebottom       : 10px !default;           //下边距
+// $num_0-100_circle_circlealpha      : 100 !default;            //透明度
+.xq_bxslider2{
+	.bx-wrapper{margin: 0 auto}
+	.bx-wrapper .bx-viewport {
+		border:none;
+		left: 0px;
+	}
+	.bx-wrapper .bx-prev{
+		display: none;
+	}
+	.bx-wrapper .bx-next{
+		display: none;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+		display: block;
+		background: $color_circle_circlecolor;
+		width: $px_0-20_circle_circlewidth;
+		height: $px_0-20_circle_circleheight;
+		border-radius: $px_0-10_circle_circleradius;
+		display: block;
+		margin: 0 5px;
+		outline: 0;
+	}
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		position: absolute;
+		bottom: $px_0-20_circle_circlebottom;
+		width: 100%;
+	}
+	.bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+		display: inline-block;
+		float:right;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: $color_circle_circlehovercolor;
+	filter: alpha(opacity=100);
+	opacity: $num_0-100_circle_circlealpha / 100;
+	}
+}

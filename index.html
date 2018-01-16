@@ -1,0 +1,318 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>xSpecial专题制作工具</title>
+<link rel="shortcut icon" href="source/images/favicon.ico">
+<link rel="stylesheet" href="source/css/style.css">
+<link rel="stylesheet" href="source/css/font.css" >
+<link rel="stylesheet" href="source/css/jquery-ui.css" >
+<link rel="stylesheet" href="source/css/messenger.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-air.css" >
+<link rel="stylesheet" href="source/css/messenger-spinner.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-air.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-block.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-flat.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-future.css" >
+<link rel="stylesheet" href="source/css/messenger-theme-ice.css" >
+<link rel="stylesheet" href="source/css/introjs.css" >
+<link rel="stylesheet" href="source/css/scdbase.css" >
+<script src="source/js/jquery.js"></script>
+<script src="source/js/jquery-ui.js"></script>
+<script src="source/js/sly.min.js"></script>
+<script src="source/js/base.js"></script>
+<script src="source/js/scdbase.js"></script>
+<script src="source/js/messenger.js"></script>
+</head>
+<body>
+<!-- <div id="toolbarup"></div> -->
+<div id="toolbar">
+  
+  <div class="toolscontainer">
+    <div id="baseWebComTools">
+      <div class="group" >
+        <div class="item " id="toolbarbutton-layout"><img src="images/toolsicon/container.png" alt="" /><span>布局</span></div>
+        <div class="item toolbarbutton-init" id="toolbarbutton-head"><img src="images/toolsicon/H30.png" alt="" /><span>专题顶部</span></div>
+        <div class="item toolbarbutton-init" id="toolbarbutton-banner"><img src="images/toolsicon/B30.png" alt="" /><span>Banner</span></div>
+        <div class="item toolbarbutton-init" id="toolbarbutton-body"><img src="images/toolsicon/M30.png" alt="" /><span>专题主体</span></div>
+        <div class="item toolbarbutton-init" id="toolbarbutton-foot"><img src="images/toolsicon/container.png" alt="" /><span>专题底部</span></div>
+        <!-- <div class="item toolbarbutton-init" id="toolbarbutton-other"><img src="images/toolsicon/O30.png" alt="" /><span>其他组件</span></div> -->
+        <!-- <div class="item toolbarbutton-init" id="toolbarbutton-template"><img src="images/toolsicon/container.png" alt="" /><span>模板</span></div> -->
+      </div>
+      <!-- <div class="group" >
+        <div class="item" id="comtoolContainer" comdata="container"><img src="images/toolsicon/container.png" alt="" /><span>容器</span></div>
+        <div class="item" id="comtoolSection" comdata="grid" ><img src="images/toolsicon/grid.png" alt="" /><span>单元</span></div>
+      </div>
+      <div class="group comtool" >
+        <div class="item" comdata="label"><img src="images/toolsicon/label.png" alt=""><span>标签</span></div>
+        <div class="item" comdata="head" ><img src="images/toolsicon/head.png" alt=""><span>页眉</span></div>
+        <div class="item" comdata="foot" ><img src="images/toolsicon/foot.png" alt=""><span>页脚</span></div>
+        <div class="item" comdata="logo" ><img src="images/toolsicon/LOGO.png" alt=""><span>logo</span></div>
+        <div class="item" comdata="search" ><img src="images/toolsicon/search.png" alt=""><span>搜索</span></div>
+        <div class="item" comdata="nav"><img src="images/toolsicon/nav.png" alt=""><span>导航</span></div>
+        <div class="item" comdata="classify" ><img src="images/toolsicon/classify.png" alt=""><span>分类</span></div>
+        <div class="item" comdata="crumbs" ><img src="images/toolsicon/crumbs.png" alt=""><span>面包</span></div>
+      </div>
+      <div class="group comtool">
+        <div class="item" comdata="banner" ><img src="images/toolsicon/banner.png" alt="" /><span>横幅</span></div>
+      </div>
+      <div class="group comtool">
+        <div class="item" comdata="productlist"><img src="images/toolsicon/productlist.png" alt=""   ><span>产品</span></div>
+        <div class="item" comdata="newslist"   ><img src="images/toolsicon/newslist.png" alt=""      ><span>新闻</span></div>
+        <div class="item" comdata="iconintro"  ><img src="images/toolsicon/picintro.png" alt=""      ><span>图标</span></div>
+        <div class="item" comdata="summarize"  ><img src="images/toolsicon/summarize.png" alt=""     ><span>概述</span></div>
+        <div class="item" comdata="pagetitle"  ><img src="images/toolsicon/pagetitle.png" alt=""     ><span>标题</span></div>
+        <div class="item" comdata="text"       ><img src="images/toolsicon/text.png" alt=""          ><span>文本</span></div>
+        <div class="item" comdata="tip"        ><img src="images/toolsicon/tip.png" alt=""           ><span>提示</span></div>
+        <div class="item" comdata="input"      ><img src="images/toolsicon/input.png" alt=""         ><span>输入</span></div>
+        <div class="item" comdata="accordion"  ><img src="images/toolsicon/accordion.png" alt=""     ><span>滑动</span></div>
+        <div class="item" comdata="form"       ><img src="images/toolsicon/form.png" alt=""          ><span>表单</span></div>
+        <div class="item" comdata="table"      ><img src="images/toolsicon/table.png" alt=""         ><span>表格</span></div>
+        <div class="item" comdata="picture"    ><img src="images/toolsicon/picture.png" alt=""       ><span>图片</span></div>
+        <div class="item" comdata="carousel"   ><img src="images/toolsicon/carousel.png" alt=""      ><span>旋转</span></div>
+        <div class="item" comdata="map"        ><img src="images/toolsicon/map.png" alt=""           ><span>地图</span></div>
+        <div class="item" comdata="page"       ><img src="images/toolsicon/page.png" alt=""          ><span>翻页</span></div>
+        <div class="item" comdata="slide"      ><img src="images/toolsicon/slide.png" alt=""         ><span>滑动</span></div>
+        <div class="item" comdata="button"     ><img src="images/toolsicon/button.png" alt=""        ><span>按钮</span></div>
+      </div>
+      <div class="group">
+        <div class="item" comdata="hotnew" ><img src="images/toolsicon/hotnew.png" alt=""><span>热点</span></div>
+        <div class="item" comdata="skill" ><img src="images/toolsicon/skill.png" alt=""><span>技能</span></div>
+        <div class="item" comdata="404" ><img src="images/toolsicon/404.png" alt=""><span>404</span></div>
+        <div class="item" comdata="progress" ><img src="images/toolsicon/progress.png" alt=""><span>进度</span></div>
+      </div> -->
+    </div>
+    <!-- <div class="group" id="viewDriveControl" style="display:none">
+      <div class="item active"><img screenName="full" src="images/toolsicon/computer.png" /><span>台式电脑</span></div>
+      <div class="item"><img screenName="laptop" src="images/toolsicon/notepad.png" /><span>笔记本</span></div>
+      <div class="item"><img screenName="ipad" src="images/toolsicon/ipad.png" /><span>平板电脑</span></div>
+      <div class="item"><img screenName="hphone" src="images/toolsicon/iphoneh.png" /><span>手机横屏</span></div>
+      <div class="item"><img screenName="vphone" src="images/toolsicon/iphone.png" /><span>手机纵屏</span></div>
+    </div> -->
+  </div>
+</div>
+<!-- <div id="toolbardown"></div> -->
+<!-- <div id="attrbar">
+		<div id="attrbar-head"></div>
+		<div id="attrbar-body">
+			<div class="attr-container">
+				<div class="attr-head">
+					<span>模板选择</span>
+					<i class="fa fa-angle-double-down"></i>
+				</div>
+				<div class="attr-body">
+					sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>
+				</div>
+			</div>
+			<div class="attr-container">
+				<div class="attr-head">
+					<span>模板选择</span>
+					<i class="fa fa-angle-double-down"></i>
+				</div>
+				<div class="attr-body">
+					sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>
+				</div>
+			</div>
+			<div class="attr-container">
+				<div class="attr-head">
+					<span>模板选择</span>
+					<i class="fa fa-angle-double-down"></i>
+				</div>
+				<div class="attr-body">
+					sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>
+				</div>
+			</div>
+			<div class="attr-container">
+				<div class="attr-head">
+					<span>模板选择</span>
+					<i class="fa fa-angle-double-down"></i>
+				</div>
+				<div class="attr-body">
+					sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>sdfsdfsdfdfsdfsd <br>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<div id="frambar">
+  <!-- 顶部标签页 -->
+  <div id="feeblesslogobar">
+    <!-- <span class="active">首页</span>
+    <span>产品列表页</span>
+    <span>产品详细页</span>
+    <span>新闻列表页</span>
+    <span>新闻详细页</span>
+    <span>联系我们页</span> -->
+  </div>
+  <div style="float:right;padding-right:25px;">
+    <!-- <div class="item" id="newwebpage"><img src="images/toolsicon/open.png" /><span>新建</span></div>
+    <div class="item" id="openphotoweb"><img src="images/toolsicon/open.png" /><span>打开</span></div>
+    <div class="item" id="save"><img src="images/toolsicon/save.png" /><span>保存</span></div>
+    <div class="item" id="save_as"><img src="images/toolsicon/save.png" /><span>另存为...</span></div> -->
+    <div class="item" id="makehtml"><img src="images/toolsicon/makehtml.png" /><span>生成</span></div>
+    <!-- <div class="item" id="undo"><img src="images/toolsicon/undo.png" /><span>撤销</span></div>
+    <div class="item" id="redo"><img src="images/toolsicon/redo.png" /><span>重做</span></div> -->
+    <div class="item" id="updatecss"><img src="images/toolsicon/updatecss.png" /><span>刷新</span></div>
+   <!--  <div class="item" id="editandview"><img src="images/toolsicon/view.png" /><span>预览</span></div> -->
+    <!-- <div class="item" id="deletephotoweb"><img src="images/toolsicon/delete.png" /><span>清空</span></div> -->
+    <div class="item" id="changeIframeBG"><img src="images/toolsicon/changebg.png" /><span>背景</span></div>
+  </div>
+  <!-- <div style="float:right;padding-right:10px;">
+    <div class="item" id="qqkillqq_minisoft"><img src="images/toolsicon/mini.png" /><span>最小</span></div>
+    <div class="item" id="qqkillqq_closesoft"><img src="images/toolsicon/softclose.png" /><span>关闭</span></div>
+  </div> -->
+</div>
+<div id="resizerFrame-container" data-step="8" data-intro="网站编辑区域" data-position='right' data-tooltipClass='resizerFrameTip'>
+  <iframe id="resizerFrame" frameborder="0" class="frameScreen-full"></iframe>
+</div>
+<div id="com-container">
+  <div id="com-container-tab"></div>
+  <div id="com-container-close"></div> 
+  <!-- <div class="scrollbar">
+			<div class="handle" style="-webkit-transform: translateZ(0px) translateX(0px); width: 296px;">
+				<div class="mousearea"></div>
+			</div>
+		</div> --> 
+</div>
+<div id="version"> <span> xSpecial Version 1.0 </span> </div>
+<div id="tps" class="tpsleft" style="display:none">
+  <div class="tpsAr"></div>
+  <div class="tpsLbd"></div>
+  <div class="tpsCtn">
+    <p class="ctt"></p>
+  </div>
+  <div class="tpsRbd"></div>
+</div>
+<div id="waitframe">
+  <div></div>
+  <canvas id="jumozi"></canvas>
+  <h3> <span>我们</span> <span>正在</span> <span>为您</span> <span>努力</span> <span>加载</span> <span>引擎，</span> <span>请稍等</span> <span>！</span> </h3>
+</div>
+
+<div id="scd_changebg">
+  <div id="scd_changebg_tit">
+    <h4>动动手指，轻松换肤！</h4>
+    <font id="scd_changebg_font1">平铺背景</font>
+    <font id="scd_changebg_font2">横向平铺</font>
+    <font id="scd_changebg_font3">不平铺</font>
+    <font id="scd_changebg_font4"><input name="scd_cbox" type="checkbox" id="scd_bgfixed" value="">锁定背景</font>
+    <a id="scd_changebg_close" href="###">╳</a> </div>
+  <div id="scd_changebg_left">
+    <ul id="scd_tabs">
+      <li><a href="###" title="scd_tab1">平铺</a></li>
+      <li><a href="###" title="scd_tab6">自定义</a></li>
+    </ul>
+  </div>
+  <div id="scd_changebg_right">
+  <div id="scd_content">
+      <div id="scd_tab1" class="scd_tab"> 
+      <ul>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-01.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-02.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-03.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-04.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+       <li>
+        <img class="scd_changeimg" src="source/images/bg/bg-05.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-06.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-07.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-08.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-09.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-10.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-11.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-12.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-13.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-14.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-15.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+        <li>
+          <img class="scd_changeimg" src="source/images/bg/bg-16.png" />
+          <img class="scd_righticon" src="images/portfolio/scd/right.png" />
+        </li>
+      </ul>
+      </div>
+
+      <div id="scd_tab6" class="scd_tab">
+      <h4>本地上传</h4>
+      <div id="scd_tab6_img">
+        <img id="scd_bgimg" src=""/>
+      </div>
+      <div id="scd_tab6_txt">
+        <p>
+          支持上传大小不超过2M的JPG、PNG图片（推荐使用尺寸小于1920*1080px的图片）
+        </p>
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type='button' class='scd_bgbtn' value='上传图片'/>
+          <input type="file" name="fileField" class="scd_bgfile" id="scd_fileField" size="28" onchange="document.getElementById('scd_textfield').value=this.value"/>
+          <input type='button' class='scd_colorbtn' id="scd_colorbtn" value='纯色选择'/>
+          <div id="scd_tab6_suc">
+            <font>&radic;</font><a>上传成功!</a>
+          </div>
+        </div>
+        <div id="scd_tab6_bottom">
+          <div>
+            <input type="button" id="scd_smbtn" name="scd_submit" value="确定"/>
+            <input type='button' id="scd_closebtn" value='取消'/>
+          </div>
+        </div>
+      </form>
+		
+      </div>
+    </div>
+    
+     
+  </div>
+</div>
+<div id="waitingcontainer">
+  <div id='waitingcomplit'>
+    <div class='waitingdom'></div>
+    <div class='waitingdom'></div>
+    <div class='waitingdom'></div>
+    <div class='waitingdom'></div>
+    <div class='waitingdom'></div>
+    <div class='waitingdom'></div>
+  </div>
+</div>
+</body>
+</html>

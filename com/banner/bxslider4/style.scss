@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+// $color_circle_bgcolor           : #000000 !default;      //颜色
+// $color_circle_circlehovercolor  : #fdb900 !default;      //激活色
+// $px_0-20_circle_circlewidth     : 12px !default;         //宽度
+// $px_0-20_circle_circleheight    : 12px !default;         //高度
+// $px_0-10_circle_circleradius    : 6px !default;          //圆角
+// $num_0-100_circle_circlealpha   : 100 !default;          //透明度
+.xq_bxslider3{
+	.bx-wrapper .bx-viewport {
+		border: none;
+		left: 0px;
+	}
+	.bx-wrapper .bx-prev{
+		display: none;
+	}
+	.bx-wrapper .bx-next{
+		display: none;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+		display: block;
+		background: $color_circle_bgcolor;
+		width: $px_0-20_circle_circlewidth;
+		height: $px_0-20_circle_circleheight;
+		border-radius: $px_0-10_circle_circleradius;
+		display: block;
+		margin: 0 5px;
+		outline: 0;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: $color_circle_circlehovercolor;
+	filter: alpha(opacity=100);
+	opacity: $num_0-100_circle_circlealpha / 100;
+	}
+}

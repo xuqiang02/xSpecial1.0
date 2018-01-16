@@ -1,0 +1,237 @@
+@charset "UTF-8";
+@import "compass/css3/transition";
+@import "compass/utilities/color/contrast";
+@import "compass/utilities/general/clearfix";
+@import "../base/_setting";
+@import "_type-config.scss";
+@import "_type-var.scss";
+$font-family:'宋体' !default;
+$color_arr:("transparent" transparent) ("default" $color_base1) ("assist" $color_red) ("red" $color_red) ("orange" $color_orange) ("yellow" $color_yellow) ("green" $color_green) ("coffee" $color_coffee) ("blue" $color_blue) ("purple" $color_purple) ("black" $color_black) ("white" $color_white) ("gray" $color_gray);
+@mixin _selection {
+  background: $color_base1;
+  color: $color_base2;
+  text-shadow: none;
+}
+@mixin icon-FontAwesome{
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+body{
+	font-family: $font-family;
+	font-size: $px-fs_type_baseFontSize;
+	line-height: $num-amp_type_baseLineHeight;
+	color: $color_base3;
+  letter-spacing:0px;
+}
+a, a:visited {
+	color: $color_type_linkColor;
+	@if $bool_type_useUnderLine == false {
+		text-decoration: none;
+	}
+	@include single-transition(color,0.2s);
+	&:hover, &:focus {
+		color: $color_type_linkHover;
+		@if $bool_type_activeUseUnderLine {
+			text-decoration: underline;
+		}
+	}
+}
+%heading {
+  line-height: $num-amp_typehead_headLineHeight;
+}
+%uppercase{
+  text-transform: uppercase;
+}
+%h1{
+  font-weight: $num-hun_typehead_head1;
+  font-size: $px-fs_typehead_head1;
+  margin:$px-mop_typehead_head1marginv 0;
+  padding:$px-mop_typehead_head1paddingv 0;
+}
+%h3{
+  font-weight: $num-hun_typehead_head3;
+  font-size: $px-fs_typehead_head3;
+  margin:$px-mop_typehead_head3marginv 0;
+  padding:$px-mop_typehead_head3paddingv 0;
+}
+%h5{
+  font-weight: $num-hun_typehead_head5;
+  font-size: $px-fs_typehead_head5;
+  margin:$px-mop_typehead_head5marginv 0;
+  padding:$px-mop_typehead_head5paddingv 0;
+}
+.#{$superbird-prefix}h1 {
+  @extend %heading;
+  @extend %h1;
+  
+}
+.#{$superbird-prefix}h2 {
+  @extend %heading;
+  @extend %h1;
+  @extend %uppercase;
+}
+.#{$superbird-prefix}h3 {
+  @extend %heading;
+  @extend %h3;
+}
+.#{$superbird-prefix}h4 {
+  @extend %heading;
+  @extend %h3;
+  @extend %uppercase;
+}
+.#{$superbird-prefix}h5 {
+  @extend %heading;
+  @extend %h5;
+}
+.#{$superbird-prefix}h6 {
+  @extend %heading;
+  @extend %h5;
+  @extend %uppercase;
+}
+%unstyled{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul,ol,li{
+	@extend %unstyled;
+}
+ul.#{$superbird-prefix}list {
+  @extend %unstyled;
+  margin-left: 0;
+  >li {
+    &:before {
+      content:"\25CF";
+      display: inline-block;
+      font-size: 1.5em;
+      line-height: $px-fs_type_baseFontSize;
+      margin-right:$px-mop_type_ulListRadius;
+    }
+  }
+}
+
+ol.#{$superbird-prefix}list {
+  @extend %unstyled;
+  counter-reset: li;
+  margin-left: 1.5em;
+  line-height: 1.6;
+  >li {
+    position: relative;
+    padding: 2px 6px 0;
+    &:before {
+      @include single-transition(all,0.5s);
+      content: counter(li);
+      counter-increment: li;
+      position: absolute;
+      top: 0.1em;
+      left: -2em;
+      width: 2em;
+      text-align: center;
+      padding: 0.3em 0.1em 0.1em;
+      font-size: 0.8em;
+      line-height: 1.5;
+      color: $color_base1;
+      background: $color_base2;
+      font-weight: bold;
+      border-radius:5px;
+    }
+    &:hover{
+      &:before{
+        color: $color_base2;
+        background: $color_base1;
+      }
+    }
+  }
+  
+}
+.#{$superbird-prefix}blockquote {
+  position: relative;
+  padding: 1.3em 4em 1em;
+  font-size: 1.15em;
+  margin:0px;
+  &:before {
+    content: "\201C"; 
+    color: $color_base1;
+    font-size: 4em;
+    display: block;
+    position: absolute;
+    top: -0.2em;
+    left: 0.1em;
+  }
+  &:after {
+    content: "\201D"; 
+    color: $color_base1;
+    font-size: 4em;
+    display: block;
+    position: absolute;
+    top: -0.2em;
+    right: 0.1em;
+  }
+}
+@if $bool_type_smartColor{
+  @each $action in $color_arr{
+    $name:nth($action,1);
+    $color:nth($action,2);
+    @if $color!="transparent"{
+      $grad1:$percent_typebox_fontAndBg;
+      $grad2:15%;
+      $text-color:darken($color,$grad1);
+      $bg-color:lighten($color,$grad1);
+      .bg-#{$name},.box-#{$name}{
+        background-color:$color;
+        color:$text-color;
+        .hline{
+          border-top:1px solid lighten($color,$grad2);
+          border-bottom:1px solid darken($color,$grad2);
+        }
+        .vline{
+          border-left:1px solid lighten($color,$grad2);
+          border-right:1px solid darken($color,$grad2);
+        }
+      }
+      .lightbg-#{$name},.lightbox-#{$name}{
+        background-color:$bg-color;
+        color:contrast-color($bg-color,#000000,#ffffff,60%);
+        .hline{
+          border-top:1px solid lighten($bg-color,$grad2);
+          border-bottom:1px solid darken($bg-color,$grad2);
+        }
+        .vline{
+          border-left:1px solid lighten($bg-color,$grad2);
+          border-right:1px solid darken($bg-color,$grad2);
+        }
+      }
+    }
+    .text-#{$name}{
+      color:$color;
+    }
+    .border-#{$name},.box-#{$name},.lightbox-#{$name}{
+      border:1px solid $color;
+    }
+  } 
+}
+.#{$superbird-prefix}box{
+  border-radius:$px-rs_typebox_boxBorderRadius;
+  padding:$px-mop_typebox_boxPaddingv $px-mop_typebox_boxPaddingh;
+  margin:$px-mop_typebox_boxMarginv $px-mop_typebox_boxMarginh;
+  &.small{
+    padding:($px-mop_typebox_boxPaddingv / 2) ($px-mop_typebox_boxPaddingh / 2);
+    margin:($px-mop_typebox_boxMarginv / 2) ($px-mop_typebox_boxMarginh / 2);
+  }
+  &.big{
+    padding:($px-mop_typebox_boxPaddingv * 2 ) ($px-mop_typebox_boxPaddingh * 2 );
+    margin:($px-mop_typebox_boxMarginv * 2 ) ($px-mop_typebox_boxMarginh * 2);
+  }
+}
+.float-left{float:left}
+.float-right{float:right}
+.clearfix{@include clearfix}
+.pie-clearfix{@include legacy-pie-clearfix}
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-small{font-size:#{$num-def_type_text}em}
+.text-big{font-size:#{$num-amp_type_text}em}

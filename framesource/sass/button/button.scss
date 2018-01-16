@@ -1,0 +1,230 @@
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+@import "compass/css3/inline-block";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "../base/_setting";
+@import "_button-config";
+@mixin glow {
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -ms-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -khtml-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: glowing;
+    -khtml-animation-name: glowing;
+    -moz-animation-name: glowing;
+    -ms-animation-name: glowing;
+    -o-animation-name: glowing;
+    animation-name: glowing;
+}
+@mixin no_animation {
+    -webkit-animation-name: none;
+    -moz-animation-name: none;
+    -ms-animation-name: none;
+    -o-animation-name: none;
+    animation-name: none;
+}
+#{$namespace_button} {
+    @include box-shadow(inset 0px 1px 0px rgba(255, 255, 255, .5), 0px 1px 2px rgba(0, 0, 0, .20));
+    background-color: $color_button_default;
+    @include background-image(linear-gradient(top,  lighten($color_button_default, 5%), darken($color_button_default, 5%)));
+    @include inline-block(middle);
+    border: 1px solid darken($color_button_default, 10%);
+    height: $height_button;
+    line-height: $height_button;
+    padding: 0px ($height_button * .8);
+    font-weight: $weight_button_font;
+    font-size: $size_button_font;
+    font-family: $string_button_fontfamily;
+    color:  $color_button_font;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+        background-color: $color_button_default;
+        @include background-image(linear-gradient(top,  lighten($color_button_default, 10%), darken($color_button_default, 7%)));
+    }
+    &:active {
+        @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px 0px rgba(255, 255, 255, 1));
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, .4);
+        background: desaturate($color_button_default, 20%);
+        color: darken($color_button_default, 20%);
+    }
+}
+
+input#{$namespace_button}, button#{$namespace_button} {
+    height: $height_button + 2;
+    cursor: pointer;
+}
+
+#{$namespace_button}-block {
+    display: block;
+}
+
+#{$namespace_button}.disabled,
+#{$namespace_button}.disabled:hover,
+#{$namespace_button}.disabled:active,
+input#{$namespace_button}:disabled,
+button#{$namespace_button}:disabled {
+    @include box-shadow(0px 1px 2px rgba(0, 0, 0, .10));
+    background: #EEE;
+    border: 1px solid #DDD;
+    color: #CCC;
+    cursor: default;
+}
+
+#{$namespace_button}-wrap {
+    @include background-image(linear-gradient(top,  #e3e3e3, #f2f2f2));
+    @include border-radius(200px);
+    @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, 0.04));
+    padding: 10px;
+    display: inline-block;
+}
+
+@each $style in $arr_button_styles {
+
+    #{$namespace_button}-#{$style} {
+
+        @if $style == 'rounded' {
+            @include border-radius(3px);
+        }
+
+        @else if $style == 'pill' {
+            @include border-radius(50px);
+        }
+
+        @else if $style == 'circle' {
+            @include border-radius($size_button_circle * 2);
+            @include box-shadow(inset 0px 1px 1px rgba(255, 255, 255, .5), 0px 1px 2px rgba(0, 0, 0, .20));
+            width: $size_button_circle;
+            line-height: $size_button_circle;
+            height: $size_button_circle;
+            padding: 0px;
+            border-width: 4px;
+            font-size: $size_button_font + 4;
+        }
+    }
+}
+
+@each $action in $arr_button_color {
+    $name: nth($action, 1);
+    $color_button_default: nth($action, 2);
+    $color_button_font: nth($action, 3);
+    #{$namespace_button}-#{$name} {
+        @include background-image(linear-gradient(top,  lighten($color_button_default, 5%), darken($color_button_default, 5%)));
+        background-color: $color_button_default;
+        border-color: darken($color_button_default, 10%);
+        color: $color_button_font;
+        // text-shadow: 0 -1px 1px rgba(darken($color_button_default, 30%), 0.35);
+
+        &:hover {
+            background-color: $color_button_default;
+            @include background-image(linear-gradient(top,  lighten($color_button_default, 10%), darken($color_button_default, 5%)));
+        }
+        &:active {
+            background: desaturate($color_button_default, 20%);
+            color: darken($color_button_default, 20%);
+        }
+    }
+}
+#{$namespace_button}-flat {
+    $color_button_default: #EEE;
+    @include transition-property(background, color);
+    @include transition-duration(.3s);
+    @include box-shadow(none);
+    background: darken($color_button_default, 2%);
+    border: none;
+    text-shadow: none;
+
+    &:hover {
+        @include background-image(lighten($color_button_default, 5%));
+    }
+    &:active {
+        background: desaturate($color_button_default, 20%);
+        color: darken($color_button_default, 20%);
+    }
+    &.disabled {
+        @include box-shadow(none);
+    }
+}
+
+@each $action in $arr_button_color {
+    $name: nth($action, 1);
+    $color_button_default: nth($action, 2);
+    $color_button_font: nth($action, 3);
+    #{$namespace_button}-flat-#{$name} {
+        @include transition-property(background, color);
+        @include transition-duration(.3s);
+        @include box-shadow(none);
+        background: $color_button_default;
+        color: $color_button_font;
+        text-shadow: none;
+        border: none;
+
+        &:hover {
+            @include background-image(lighten($color_button_default, 5%));
+        }
+        &:active {
+            background: desaturate($color_button_default, 20%);
+            color: darken($color_button_default, 15%);
+        }
+        &.disabled {
+            @include box-shadow(none);
+        }
+    }
+}
+
+@each $size in $arr_button_sizes {
+    #{$namespace_button}-#{$size} {
+
+        @if $size == 'large' {
+            font-size: $size_button_font + 5;
+            height: $height_button * 1.2;
+            line-height: $height_button * 1.2;
+            padding: 0px ($height_button * 1.2) * .8;
+        }
+
+        @if $size == 'small' {
+            font-size: $size_button_font - 2;
+            height: $height_button * .8;
+            line-height: $height_button * .8;
+            padding: 0px ($height_button * .8) * .8;
+        }
+
+        @if $size == 'tiny' {
+            font-size: $size_button_font - 3;
+            height: $height_button * .7;
+            line-height: $height_button * .7;
+            padding: 0px ($height_button * .7) * .8;
+        }
+    }
+    input#{$namespace_button}-#{$size}, button#{$namespace_button}-#{$size} {
+        @if $size == 'large' {
+            height: ($height_button * 1.2) + 2;
+        }
+
+        @if $size == 'small' {
+            height: ($height_button * .8) + 2;
+        }
+
+        @if $size == 'tiny' {
+            height: ($height_button * .7) + 2;
+        }
+    }
+}
+#{$namespace_button} {
+    &#{$namespace_glow} {
+        @include glow;
+    }
+    &#{$namespace_glow}:active {
+        @include no_animation;
+        @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px 0px rgba(255, 255, 255, 1));
+    }
+}

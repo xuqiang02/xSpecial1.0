@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@import "compass";
+@import "_config.scss";
+@import "_var.scss";
+
+.footer {
+	height: 98px;
+	line-height: 98px;
+    font-family: "微软雅黑", SimHei, Verdana, sans-serif;
+	.lwrap {
+		float: left;
+		.openURL{
+		    font-size: 16px;
+		    height: 30px;
+		    line-height: 30px;
+		    display: inline-block;
+		    margin: 29px 67px 0 0;
+		    color: #000;
+		    .icon-openURL{
+	    	    display: inline-block;
+			    width: 38px;
+			    height: 30px;
+			    background: url('./images/icon.png') no-repeat -97px 0;
+			    vertical-align: middle;
+			    margin-right: 15px;
+		    }
+		}
+
+	}
+
+	.rwrap {
+		float: right;
+		.weixin{
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			margin: 29px 67px 0 0;
+			color: #000;
+			.QRcode {
+				position: absolute;
+				top: -178px;
+				left: -40px;
+				width: 181px;
+				height: 187px;
+				display: none;
+				background: url('./images/icon.png') no-repeat -169px -113px;
+			}
+			.icon-weixin{
+				display: inline-block;
+			    width: 38px;
+			    height: 30px;
+		       	background: url('./images/icon.png') no-repeat -97px -35px;
+			    vertical-align: middle;
+			    margin-right: 15px;
+			}
+			&:hover {
+
+				.QRcode {
+					display: block;
+				}
+
+				.icon-weixin {
+				    background: url('./images/icon.png') no-repeat -97px -160px;
+				}
+
+			}
+
+		}
+		.weibo{
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			margin: 29px 67px 0 0 ;
+			color: #000;
+			.icon-weibo{
+			    display: inline-block;
+			    width: 38px;
+			    height: 30px;
+		        background: url('./images/icon.png') no-repeat -96px -75px;
+			    vertical-align: middle;
+			    margin-right: 15px;
+			}
+			&:hover {
+
+				.icon-weibo {
+			        background: url('./images/icon.png') no-repeat -97px -205px;
+				}
+
+			}
+		}
+		.open4s {
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			margin: 29px 0 0;
+			color: #000;
+			.icon-4s{
+			    display: inline-block;
+			    width: 45px;
+			    height: 30px;
+		        background: url('./images/icon.png') no-repeat -97px -115px;
+			    vertical-align: middle;
+			    margin-right: 15px;
+			}
+		}
+	}
+
+}

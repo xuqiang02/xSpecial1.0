@@ -1,0 +1,20 @@
+.header {
+  height: 72px;
+  background: #fff;
+  position: relative; }
+  .header .logoTitle {
+    background: url("./images/logo_title.jpg") no-repeat center;
+    display: block;
+    width: 146px;
+    height: 30px;
+    position: absolute;
+    top: 22px;
+    left: 22px; }
+  .header .logo {
+    background: url("./images/logo.jpg") no-repeat center;
+    display: block;
+    width: 93px;
+    height: 32px;
+    position: absolute;
+    top: 19px;
+    right: 26px; }

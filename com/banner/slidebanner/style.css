@@ -1,0 +1,9 @@
+.dg-wrapper a {
+  background: none; }
+  .dg-wrapper a div.dg_name {
+    font-size: 16px;
+    color: #f90; }
+    .dg-wrapper a div.dg_name else {
+      font-weight: bold; }
+  .dg-wrapper a img {
+    width: 100%; }

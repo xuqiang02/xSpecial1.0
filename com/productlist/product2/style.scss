@@ -1,0 +1,46 @@
+﻿@charset "UTF-8";
+@import "config";
+@import "var";
+
+
+
+.scd_product5_tit{
+	h3{
+		font-size: $px_14-30_all_profivesize;
+		color: $color_all_profivecolor;
+		margin-left: 10px;
+	}
+}
+#scd_product5 {
+	margin-top:$px_all_promargintop;
+	.span3{
+
+		text-align: center;
+		.pro5span{
+			width:100%;
+			position: relative;
+		}
+		img{
+			width: 100%;
+		}
+		.pro5div {
+			position:absolute;
+			bottom:0px;
+			height: 40px;
+			width:100%;
+			overflow: hidden;
+			display: none;
+			background-color: #222222;
+			filter:alpha(opacity=$num_0-100_all_prohoverpercent);
+			-moz-opacity:$num_0-100_all_prohoverpercent / 100; 
+			opacity:$num_0-100_all_prohoverpercent / 100;
+			a{
+				font-size: $px_12-20_all_profivelsize;
+				color: $color_all_profivelcolor;
+				line-height: 40px;
+				padding-left:15px;
+				padding-right:15px;
+			}
+		}
+	}
+}

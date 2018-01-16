@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+// $color_all_bgcolor               : #ccc !default;             //背景色
+// $color_all_bghovercolor          : #d5e151 !default;          //激活色
+// $num_0-100_all_bgalpha           : 100 !default;              //透明度
+// $color_text_textcolor            : #fff !default;             //颜色
+// $px_10-20_circle_circlewidth     : 10px !default;             //宽度
+// $px_10-20_circle_circleheight    : 10px !default;             //高度
+// $px_0-20_circle_circleradius     : 6px !default;              //圆角
+// $color_circle_circlecolor        : #a8f4ea !default;          //颜色
+// $color_circle_circlecolor        : #f3836b !default;          //激活色
+// $px_0-10_circle_circleheight     : 10px !default;             //下边距
+.xq_bxslider{
+	.bx-wrapper { margin: 0 auto; }
+	.bx-wrapper .bx-viewport {
+		border: none;
+		left: 0px; 
+	}
+	.bx-wrapper .bx-prev{
+		left: 20px;
+		display: block;
+		text-decoration: none;
+		color: $color_text_textcolor;
+		font-size: 38px;
+		font-weight: bold;
+		font-family: -self;
+		line-height: 100px;
+		background: #ccc url('./images/prev-btn.png') no-repeat center;
+		background-size:50%;
+		text-align: center;
+		opacity: ($num_0-100_all_bgalpha / 100) - 0.3;
+		width:40px;
+		height:100px;
+	}
+	.bx-wrapper .bx-next{
+		right: 20px;
+		display: block;
+		text-decoration: none;
+		color: $color_text_textcolor;
+		font-size: 38px;
+		font-weight: bold;
+		font-family: -self;
+		line-height: 100px;
+		background: #ccc url('./images/next-btn.png') no-repeat center;
+		background-size:50%;
+		text-align: center;
+		opacity: ($num_0-100_all_bgalpha / 100) - 0.3;
+		width:40px;
+		height:100px;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+		display: block;
+		background: $color_circle_circlecolor;
+		border-radius: $px_0-20_circle_circleradius;
+		display: block;
+		width: $px_10-20_circle_circlewidth;
+		height: $px_10-20_circle_circleheight;
+		margin: 0 5px;
+		outline: 0;
+	}
+	.bx-wrapper .bx-controls-direction a{
+		text-indent:-9999px;
+	}
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		position: absolute;
+		bottom: $px_0-10_circle_circleheight;
+		width: 100%;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+	width:60px;
+	background: $color_circle_circlehovercolor;
+	filter: alpha(opacity=100);
+	opacity: $num_0-100_all_bgalpha / 100;
+	}
+}

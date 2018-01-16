@@ -1,0 +1,4 @@
+/* line 3, ../sass/frametrans.scss */
+.row, [class*="span"], [class*="col"] {
+  -webkit-transition: all 1s;
+  transition: all 1s; }

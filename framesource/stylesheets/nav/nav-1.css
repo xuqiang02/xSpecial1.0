@@ -1,0 +1,149 @@
+/**/
+/* level 2 */
+/**/
+/**/
+/* level 1 */
+/**/
+.sb-menu {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: #111111;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #373737), color-stop(100%, #000000));
+  background-image: -webkit-linear-gradient(#373737, #000000);
+  background-image: -moz-linear-gradient(#373737, #000000);
+  background-image: -o-linear-gradient(#373737, #000000);
+  background-image: linear-gradient(#373737, #000000);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF373737', endColorstr='#FF000000');
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 999;
+  font-size: 0;
+  line-height: 0;
+  text-align: right;
+  list-style: none; }
+  .sb-menu:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .sb-menu li {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding: 10px 10px;
+    margin: 0px 0px;
+    border-left: 1px solid #373737;
+    border-right: 1px solid black;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: left; }
+    .sb-menu li:first-child {
+      border-left: none; }
+    .sb-menu li:last-child {
+      border-right: none; }
+    .sb-menu li a {
+      display: block;
+      padding: 0 20px;
+      text-decoration: none;
+      color: white;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s; }
+    .sb-menu li:hover > a, .sb-menu li.now > a {
+      background: white;
+      color: black;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px; }
+  .sb-menu .right {
+    float: none; }
+    .sb-menu .right:hover a, .sb-menu .right.now a {
+      margin-top: 0px; }
+  .sb-menu .switcher {
+    display: none; }
+
+/**/
+/* level 2+ */
+/**/
+.sb-menu li > div {
+  position: absolute;
+  z-index: 1000;
+  margin-left: 0px;
+  top: 100%;
+  left: -9999px;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+.sb-menu li:hover > div {
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: translate(0, 0); }
+.sb-menu li ul {
+  margin: 0px;
+  padding: 0px; }
+.sb-menu li li {
+  display: block;
+  float: none;
+  border-width: 0;
+  border-top-width: 1px;
+  line-height: 21px;
+  border-top: 1px solid #0bb1d6;
+  border-bottom: 1px solid #033944;
+  border-top-color: #262626;
+  border-bottom-color: black; }
+  .sb-menu li li:first-child {
+    border-top: none; }
+  .sb-menu li li:last-child {
+    border-bottom: none; }
+  .sb-menu li li:first-child {
+    border-top: 0; }
+  .sb-menu li li a {
+    padding-top: 12px;
+    padding-bottom: 12px; }
+  .sb-menu li li > div {
+    top: 0;
+    margin: 0px; }
+  .sb-menu li li:hover > div {
+    left: 100%; }
+.sb-menu .right > div {
+  -o-transform-origin-x: 100%;
+  -ms-transform-origin-x: 100%;
+  -moz-transform-origin-x: 100%;
+  -webkit-transform-origin-x: 100%; }
+.sb-menu .right:hover > div {
+  right: 0;
+  left: auto; }
+  .sb-menu .right:hover > div:before {
+    right: 24px;
+    left: auto; }
+.sb-menu .right li > div {
+  margin: 0 8px 0 0;
+  -o-transform-origin-x: 100%;
+  -ms-transform-origin-x: 100%;
+  -moz-transform-origin-x: 100%;
+  -webkit-transform-origin-x: 100%; }
+  .sb-menu .right li > div:after {
+    right: auto;
+    left: 100%; }
+  .sb-menu .right li > div:before {
+    right: auto;
+    left: 100%;
+    border-right: none;
+    border-left: 5px solid rgba(255, 255, 255, 0.9); }
+.sb-menu .right li:hover > div {
+  right: 100%;
+  left: auto; }

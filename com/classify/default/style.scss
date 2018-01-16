@@ -1,0 +1,112 @@
+﻿@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+
+.userAppraiseWrap {
+	position: relative;
+	border-bottom:1px solid #cfcfcf;
+	.userAppraise {
+		padding: 0 20px;
+		.stitle {
+			margin-bottom: 30px;
+		    font-size: 24px;
+		    color:#000;
+		    font-weight:bold;
+		}
+		.userCon {
+			float:left;
+			width:100%;
+			margin-top: 74px;
+			display: none;
+			.appraiseList {
+				float: left;
+				width: 50%;
+				-overflow: hidden;
+				li {
+					float:left;
+					width:100%;
+					padding-bottom: 28px;
+				}
+				.userPhoto {
+					float: left;
+					width: 44px;
+					height: 44px;
+					border-radius: 50%;
+					margin-right: 10px
+				}
+				.userWrap {
+					float: left;
+					width: 400px;
+					.owner {
+						padding: 8px 0;
+						margin-bottom: 4px;
+						color: #686f8b;
+						font-size: 14px;
+					}
+					.speak {
+						border-radius: 0 4px 4px 4px;
+						padding: 8px 11px;
+						background: #f3f3f3;
+						color: #14171b;
+						font-size: 16px;
+						line-height: 26px;
+						display: inline-block;
+					}
+				}
+			}
+			.carPicture {
+				float: right;
+				width: 50%;
+				height: 382px;
+				img {
+					background: #ebebeb;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		.userNavWrap {
+			position: relative;
+			overflow: hidden;
+			height: 64px;
+			.userNav{
+				li {
+					float: left;
+					&.active a{
+						&:after {
+							content: '';
+							display: block;
+							width: 100%;
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							background: #000000;
+							height: 6px;
+						}
+					}
+					a {
+						display: block;
+						width: 144px;
+						height: 64px;
+						line-height: 64px;
+						text-align: center;
+						font-size: 20px;
+					    color: #000;
+						position: relative;
+					}
+				}
+			}
+		}
+		.userNavHover {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: -1;
+			width: 144px;
+			height: 6px;
+			background: #e5e5e5;
+		}
+	}
+
+}

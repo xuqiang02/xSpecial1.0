@@ -1,0 +1,276 @@
+@mixin corl($width,$space){
+	[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col'],.#{$superbird-prefix}grid{
+		position: relative;
+		float: left;
+		min-height:1px;
+		margin-left: $space;
+	}
+	@for $i from 1 to 13{
+		.#{$superbird-prefix}span#{$i}{
+			width:$width/12*($i)-$space;
+		}
+		.#{$superbird-prefix}offset#{$i}{
+			margin-left:$width/12*($i) + $space;
+		}
+	}
+	@if($bool_use_assist_grid){
+		@for $i from 1 to $number_assist_grid+1{
+			.#{$superbird-prefix}col#{$i}{
+				width:$width/($number_assist_grid)*($i)-$space;
+			}
+			.#{$superbird-prefix}shift#{$i}{
+				margin-left:$width/($number_assist_grid)*($i) + $space;
+			}
+		}	
+	}
+	@if $bool_use_metro_grid{
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}.#{$superbird-prefix}metro{
+				height:$width/12*($i)-$space;
+			}
+			.#{$superbird-prefix}span#{$i}.#{$superbird-prefix}text-vcenter{
+				line-height:$width/12*($i)-$space;
+			}
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}.#{$superbird-prefix}metro{
+					height:$width/($number_assist_grid)*($i)-$space;
+				}
+				.#{$superbird-prefix}col#{$i}.#{$superbird-prefix}text-vcenter{
+					line-height:$width/($number_assist_grid)*($i)-$space;
+				}
+			}	
+		}
+	}
+	.#{$superbird-prefix}row{
+		margin-left:$space * -1;
+		position: relative;
+		@include clearfix;
+	}
+	.#{$superbird-prefix}row-top,.#{$superbird-prefix}grid-top{
+		margin-top:$space;
+	}
+	.#{$superbird-prefix}row-bottom,.#{$superbird-prefix}grid-bottom{
+		margin-bottom: $space;
+	}
+	.#{$superbird-prefix}container{
+		width:$width - $space;
+		margin:0px auto;
+	}
+}
+@mixin grid_broder($space){
+	$direction:"top" "left" "bottom" "right";
+	.#{$superbird-prefix}row-border{
+		margin-left:($space * -1) - $width_grid_border * 2;
+		border:$width_grid_border $borderstyle_grid_border $color_grid_border;
+		@each $i in $direction{
+			&.no-#{$i}{
+				border-#{$i}:none;
+			}
+			&.only-#{$i}{
+				border:none;
+				border-#{$i}:$width_grid_border $borderstyle_grid_border $color_grid_border;
+			}
+		}
+		&.no-right,&.no-left,&.only-right,&.only-left{
+			margin-left:($space * -1) - $width_grid_border;
+		}
+	}
+	.#{$superbird-prefix}grid-border{
+		margin-left:$space - $width_grid_border * 2 !important;
+		border:$width_grid_border $borderstyle_grid_border $color_grid_border;
+		@each $i in $direction{
+			&.no-#{$i}{
+				border-#{$i}:none;
+			}
+			&.only-#{$i}{
+				border:none;
+				border-#{$i}:$width_grid_border $borderstyle_grid_border $color_grid_border;
+			}
+		}
+		&.no-right,&.no-left,&.only-right,&.only-left{
+			margin-left:$space - $width_grid_border;
+		}
+	}
+}
+@mixin grid_fluid($space,$space2){
+	.#{$superbird-prefix}container-fluid{
+		padding-left:$space2;
+		padding-right:$space2;
+	}
+	.#{$superbird-prefix}row-fluid{
+		position: relative;
+		width:( 1 + $space) * 100%;
+		margin-left: $space * -100%;
+		@include clearfix;
+		[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col']{
+		  	float: left;
+			min-height:1px;
+			position: relative;
+		}
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}{
+				width: ($i /12 - $space)*100%;
+				*width: ($i /12 - $space)*100% - 0.5%; 
+				margin-left:$space * 100%;
+			}
+			.#{$superbird-prefix}offset#{$i}{
+				margin-left:(1/12 * $i + $space)*100%;
+			}
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}{
+					width:($i / $number_assist_grid - $space )*100%;
+				}
+				.#{$superbird-prefix}shift#{$i}{
+					margin-left:($i / $number_assist_grid + $space)*100%;
+				}
+			}	
+		}
+	}
+}
+@mixin grid_equally{
+	.#{$superbird-prefix}row-equally{
+		width:100;
+		position: relative;
+		@include clearfix;
+		[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col']{
+		  	float: left;
+			min-height:1px;
+			position: relative;
+			margin-left:0px;
+		}
+		@for $i from 1 to 13{
+			.#{$superbird-prefix}span#{$i}{
+				width: ($i /12 )*100%;
+				*width: ($i /12 )*100% - 0.5%; 
+			}
+			.#{$superbird-prefix}offset#{$i}{
+				margin-left:($i /12 )*100%;
+			}
+		}
+		@if($bool_use_assist_grid){
+			@for $i from 1 to $number_assist_grid+1{
+				.#{$superbird-prefix}col#{$i}{
+					width:(1/($number_assist_grid)*($i))*100%;
+				}
+				.#{$superbird-prefix}shift#{$i}{
+					margin-left:(1/($number_assist_grid)*($i))*100%;
+				}
+			}	
+		}
+	}
+}
+@mixin grid_phone{
+    .#{$superbird-prefix}container {
+        width: auto;
+        margin-left:10px;
+        margin-right:10px;
+    }
+    .#{$superbird-prefix}row{
+    	margin-left: 0px;
+    	margin-right: 0px;
+    }
+    .#{$superbird-prefix}row,.#{$superbird-prefix}row-fluid,.#{$superbird-prefix}row-equally{
+    	[class*="#{$superbird-prefix}span"],[class*="#{$superbird-prefix}col"]{
+    		display: block;
+	        float: none;
+	        width: 100%;
+	        margin-left: 0px;
+	        margin-right: 0px;
+	        -webkit-box-sizing: border-box;
+	           -moz-box-sizing: border-box;
+	                box-sizing: border-box;
+    	}
+    }
+    @if $bool_use_grid_phone{
+    	.#{$superbird-prefix}row.#{$superbird-prefix}grid-phone,.#{$superbird-prefix}row-fluid.#{$superbird-prefix}grid-phone,.#{$superbird-prefix}row-equally.#{$superbird-prefix}grid-phone{
+			position: relative;
+			width:( 1 + $width_grid_space/$width_container) * 100%;
+			margin-left: ($width_grid_space/$width_container) * -100%;
+			@include clearfix;
+			[class*='#{$superbird-prefix}span'],[class*='#{$superbird-prefix}col']{
+			  	float: left;
+				min-height:1px;
+				position: relative;
+			}
+			@for $i from 1 to 13{
+				.#{$superbird-prefix}span#{$i}{
+					width: ($i /12 - ($width_grid_space/$width_container))*100%;
+					*width: ($i /12 - ($width_grid_space/$width_container))*100% - 0.5%; 
+					margin-left:($width_grid_space/$width_container) * 100%;
+				}
+				.#{$superbird-prefix}offset#{$i}{
+					margin-left:(1/12 * $i + ($width_grid_space/$width_container))*100%;
+				}
+			}
+			@if($bool_use_assist_grid){
+				@for $i from 1 to $number_assist_grid+1{
+					.#{$superbird-prefix}col#{$i}{
+						width:($i / $number_assist_grid - ($width_grid_space/$width_container) )*100%;
+					}
+					.#{$superbird-prefix}shift#{$i}{
+						margin-left:($i / $number_assist_grid + ($width_grid_space/$width_container))*100%;
+					}
+				}	
+			}
+    	}
+    }
+    .#{$superbird-prefix}grid-border,.#{$superbird-prefix}row-border{
+    	margin-left:0px !important;
+    }
+    [class*="#{$superbird-prefix}shift"],[class*="#{$superbird-prefix}offset"]{
+        margin-left:0px;
+    }
+    .#{$superbird-prefix}row-top,.#{$superbird-prefix}grid-top{
+    	margin-top:$width_grid_space_phone;
+    }
+    .#{$superbird-prefix}row-bottom,.#{$superbird-prefix}grid-bottom{
+    	margin-bottom: $width_grid_space_phone;
+    }
+}
+@include corl($width_container,$width_grid_space);
+@if($bool_use_grid_border){
+	@include grid_broder($width_grid_space);
+}
+@if($bool_use_fluid_grid){
+	@include grid_fluid($width_grid_space/$width_container,$width_grid_space);
+}
+
+@if $bool_response{
+	@media (min-width: $width_container_pc){
+		@include corl($width_container_pc,$width_grid_space_pc);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_pc);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_pc/$width_container_pc,$width_grid_space_pc);
+		}
+	}
+	@media (min-width: $width_container_pad) and (max-width: $width_container) {
+		@include corl($width_container_pad,$width_grid_space_pad);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_pad);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_pad/$width_container_pad,$width_grid_space_pad);
+		}
+	}
+	@media (min-width: $width_container_phone) and (max-width: $width_container_pad) {
+		@include corl($width_container_phone,$width_grid_space_phone);
+		@if($bool_use_grid_border){
+			@include grid_broder($width_grid_space_phone);
+		}
+		@if($bool_use_fluid_grid){
+			@include grid_fluid($width_grid_space_phone/$width_container_phone,$width_grid_space_phone);
+		}
+	}
+	@media (max-width: $width_container_phone){
+		@include grid_phone;
+	}
+}
+@if($bool_use_equally_grid){
+	@include grid_equally;
+}

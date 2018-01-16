@@ -1,0 +1,235 @@
+@charset "UTF-8";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "../../../framesource/sass/base/anim";
+@import "_config.scss";
+@import "_var.scss";
+
+
+$superbird-prefix:"qqkillqq1";
+
+@mixin return_RadiusStyle($value,$pos){
+	@if $pos=="center"{
+		@include border-radius($value);
+	}
+	@else if $pos=="left"{
+		@include border-left-radius($value);
+	}
+	@else if $pos=="right"{
+		@include border-right-radius($value);
+	}
+	@else if $pos=="top"{
+		@include border-top-radius($value);
+	}
+	@else if $pos=="bottom"{
+		@include border-bottom-radius($value);
+	}
+}
+@mixin return_BorderStyle($width,$color,$pos){
+	@if $pos=="center"{
+		border:$width solid $color;
+	}
+	@else{
+		border-#{$pos}:$width solid $color;
+	}
+}
+@mixin return_BlockStyle($padding:(0,0,0,0),$margin:(0,0,0,0),$border:(0,($color_base1,$color_base2),"center"),$radius:(0px,"center"),$background:()){
+	display:block;
+	@if length($padding)==1{
+		padding:nth($padding,1);
+	}
+	@else if length($padding)==2{
+		padding:nth($padding,1) nth($padding,2);
+	}
+	@else if length($padding)==3{
+		padding:nth($padding,1) nth($padding,2) nth($padding,3);
+	}
+	@else if length($padding)==4{
+		padding:nth($padding,1) nth($padding,2) nth($padding,3) nth($padding,4);
+	}
+	@if length($margin)==1{
+		margin:nth($margin,1);
+	}
+	@else if length($margin)==2{
+		margin:nth($margin,1) nth($margin,2);
+	}
+	@else if length($margin)==3{
+		margin:nth($margin,1) nth($margin,2) nth($margin,3);
+	}
+	@else if length($margin)==4{
+		margin:nth($margin,1) nth($margin,2) nth($margin,3) nth($margin,4);
+	}
+
+	@if nth($border,1) != 0 or nth($border,1)!="0px"{
+		@if nth($border,2){
+			@if nth($border,3){
+				@include return_BorderStyle(nth($border,1),nth(nth($border,2),1),nth($border,3));
+			}
+			@if length(nth($border,2))>1{
+				&:hover{
+					border-color:nth(nth($border,2),2);
+				}
+			}
+		}
+		@else{
+			@include return_BorderStyle(nth($border,1),$color_base1,center);
+		}
+	}
+	@if nth($radius,1)!=0 or nth($radius,1)!="0px"{
+		@if nth($radius,2){
+			@include return_RadiusStyle(nth($radius,1),nth($radius,2));
+		}
+		@else{
+			@include return_RadiusStyle(nth($radius,1),center);
+		}
+	}
+	@if length($background)==1{
+		background-color:$background;
+	}
+	@else if nth($background,1)!=nth($background,2){
+		background-color:nth($background,1);
+		&:hover{
+			background-color:nth($background,2);
+		}
+	}
+}
+@mixin return_fontColor($color){
+	@if length($color)==1{
+		color:$color;
+	}
+	@if length($color)==2{
+		color:nth($color,1);
+		&:hover{
+			color:nth($color,2);
+		}
+	}
+}
+@mixin return_gradentBg($color,$strong){
+	@if nth($color,1) and nth($color,1)!="transparent"{
+		@include background-image(linear-gradient(lighten(nth($color,1),$strong), darken(nth($color,1),$strong)));
+		@include filter-gradient(lighten(nth($color,1),$strong), darken(nth($color,1),$strong));
+	}
+	@if nth($color,2) and nth($color,2)!="transparent" and nth($color,2)!=nth($color,1){
+		&:hover{
+			@include background-image(linear-gradient(lighten(nth($color,2),$strong), darken(nth($color,2),$strong)));
+			@include filter-gradient(lighten(nth($color,2),$strong), darken(nth($color,2),$strong));
+		}
+	}
+}
+%galleryRadius{
+	@include return_RadiusStyle($px_0-100_imgitem_radiusSize,$list_left-right-bottom-top-center_imgitem_radiusPosition);
+}
+.#{$superbird-prefix}gallery{
+	img{
+		max-width: 100% ;
+		@extend %galleryRadius;
+	}
+	.#{$superbird-prefix}imgitem{
+		@include return_BorderStyle($px_0-5_imgitem_borderSize,$color_imgitem_borderColor,$list_left-right-bottom-top-center_imgitem_borderPosition);
+		@include return_BlockStyle(
+			($px_0-50_imgitem_paddingv $px_0-50_imgitem_paddingh),
+			($px_0-50_imgitem_marginv $px_0-50_imgitem_marginh),
+			($px_0-5_imgitem_borderSize,$color_imgitem_borderColor,$list_left-right-bottom-top-center_imgitem_borderPosition),
+			($px_0-100_imgitem_radiusSize,$list_left-right-bottom-top-center_imgitem_radiusPosition),
+			($color_imgitem_backgroundColor,$color_imgitem_backgroundHoverColor)
+		);
+		position: relative;
+		@include clearfix;
+		&:hover{
+			.#{$superbird-prefix}cover{
+				@include opacity($def_cover_tansparentStrong * 1);
+			}
+			@if $bool_cover_useLink{
+				.#{$superbird-prefix}link{display:block;}
+				@if$bool_cover_useLightBox{
+					.#{$superbird-prefix}lightbox{display: block;}
+					.#{$superbird-prefix}lightbox{
+						left:30%;
+					}
+					.#{$superbird-prefix}link{
+						right:30%;
+					}
+				}
+				@else{
+					.#{$superbird-prefix}link{
+						left: 50%;
+					}
+				}
+			}
+			@else{
+				@if$bool_cover_useLightBox{
+					.#{$superbird-prefix}lightbox{display: block;}
+					.#{$superbird-prefix}lightbox{
+						left: 50%;
+					}
+				}
+			}
+		}
+		
+		.#{$superbird-prefix}cover{
+			@extend %galleryRadius;
+			@include transparent;
+			position: absolute;
+			top:$px_0-50_imgitem_paddingv;
+			bottom:$px_0-50_imgitem_paddingv;
+			left:$px_0-50_imgitem_paddingh;
+			right:$px_0-50_imgitem_paddingh;
+			background-color:black;
+		}
+		.#{$superbird-prefix}lightbox,.#{$superbird-prefix}link{
+			display: none;
+			position: absolute;
+			width:$px_12-30__cover_linkSize;
+			height:$px_12-30__cover_linkSize;
+			line-height:$px_12-30__cover_linkSize;
+			margin-top:$px_12-30__cover_linkSize * - 0.5 - $px_0-50_cover_paddingv;
+			margin-left:$px_12-30__cover_linkSize * - 0.5 - $px_0-50_cover_paddingh;
+			top:50%;
+			i{
+				font-size: $px_12-30__cover_linkSize;
+				color:white;
+			}
+			@include return_BlockStyle(
+				($px_0-50_cover_paddingv $px_0-50_cover_paddingh),
+				(),
+				($px_0-5_cover_borderSize,$color_cover_borderColor,$list_left-right-bottom-top-center_cover_borderPosition),
+				($px_0-100_cover_radiusSize,$list_left-right-bottom-top-center_cover_radiusPosition),
+				($color_cover_backgroundColor,$color_cover_backgroundHoverColor)
+			);
+		}
+	}
+	.#{$superbird-prefix}imgtitle{
+		@include single-transition;
+		color:$color_imgtext_titleFontColor !important;
+		font-size: $px_12-30__imgtext_titleFontSize !important;
+		&:hover{
+			color:$color_imgtext_titleFontHoveColor !important;
+		}
+	}
+	.#{$superbird-prefix}imgintro{
+		text-indent: 2em;
+	}
+}
+.csstransitions{
+	.#{$superbird-prefix}gallery{
+		&,*{
+			@include single-transition;
+		}
+		.#{$superbird-prefix}imgitem{
+			&:hover{
+				.#{$superbird-prefix}lightbox,.#{$superbird-prefix}link{
+					@extend %#{$animin_cover_coveranimate};
+				}
+			}
+			.#{$superbird-prefix}lightbox,.#{$superbird-prefix}link{
+				@extend %#{$animout_cover_coveranimate};
+				-webkit-animation-duration: 0.5s;
+				-moz-animation-duration: 0.5s;
+				-o-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				display: block;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,81 @@
+.policy {
+  padding: 20px 20px 0; }
+  .policy .stitle {
+    margin: 0;
+    font-size: 24px; }
+    .policy .stitle .icon-policy {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+      vertical-align: middle;
+      background: #000;
+      transition: background .6s;
+      -ms-transition: background .6s;
+      -webkit-transition: background .6s;
+      -moz-transition: background .6s;
+      -o-transition: background .6s; }
+    .policy .stitle .icon-down {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+      vertical-align: middle;
+      background: #000;
+      transition: background .6s;
+      -ms-transition: background .6s;
+      -webkit-transition: background .6s;
+      -moz-transition: background .6s;
+      -o-transition: background .6s;
+      background: url("./images/icon.png") no-repeat -32px -57px; }
+  .policy .policyCon {
+    float: left;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    .policy .policyCon .sstitle {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px; }
+    .policy .policyCon .ssdesc {
+      font-size: 16px;
+      margin-bottom: 54px; }
+    .policy .policyCon .left {
+      float: left;
+      width: 48%;
+      padding-right: 2%; }
+    .policy .policyCon .right {
+      float: right;
+      width: 48%;
+      padding-left: 2%; }
+    .policy .policyCon li {
+      margin-bottom: 34px; }
+    .policy .policyCon .smtitle {
+      padding-left: 18px;
+      font-size: 19px;
+      margin-bottom: 7px;
+      position: relative; }
+      .policy .policyCon .smtitle:before {
+        content: '';
+        display: block;
+        width: 11px;
+        height: 22px;
+        background: #d13541;
+        position: absolute;
+        left: 0;
+        top: 0; }
+    .policy .policyCon .smcon {
+      font-size: 15px;
+      padding-left: 18px;
+      line-height: 30px; }
+    .policy .policyCon .smconDot {
+      padding-left: 32px;
+      position: relative; }
+      .policy .policyCon .smconDot:before {
+        content: ".";
+        font-size: 30px;
+        position: absolute;
+        left: 18px;
+        top: -10px; }

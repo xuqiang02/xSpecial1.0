@@ -1,0 +1,133 @@
+﻿@charset "UTF-8";
+@import "compass";
+@import "config";
+@import "var";
+.infoContent{
+	float:left;
+	width:100%;
+	background:url('./images/bg.jpg') no-repeat center;
+	background-size:cover;
+	.leaveInfo {
+		float:right;
+		width: 480px;
+		margin-right:50px;
+		border: 1px solid #c0c0c0;
+		background: #fff;
+	    font-family: "微软雅黑", SimHei, Verdana, sans-serif;
+		box-shadow: 0px 6px 16px rgba(97, 97, 97, 0.17);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -16px;
+			width: 16px;
+			height: 16px;
+			background: url('./images/icon.png') no-repeat 0 -85px;
+		}
+		ul {
+			float:left;
+			width:100%;
+			box-sizing:border-box;
+			padding: 44px 22px 0;
+			li {
+				float:left;
+				width:100%;
+				box-sizing:border-box;
+				padding: 9px 0;
+				font-size: 16px;
+				&.liBtn {
+					text-align: center;
+					position: relative;
+					.formTip {
+						background: url('./images/icon.png') no-repeat -350px -91px;
+						width: 154px;
+						height: 57px;
+						position: absolute;
+						top: -17px;
+						left: 140px;
+					}
+				}
+				label {
+					float: left;
+					width: 100px;
+					height: 40px;
+					line-height: 40px;
+					text-align: right;
+					margin-right: 20px;
+				}
+				input, select {
+					float: left;
+					width: 270px;
+					height: 40px;
+					padding: 0 10px;
+					background: #fff;
+					font-size: 14px;
+					border: 1px solid #878787;
+					-webkit-appearance: none;
+				    -moz-appearance: none;
+				    appearance: none;
+				}
+				select {
+					width: 292px;
+					padding: 0 25px 0 10px;
+					border-radius: 0;
+					background: transparent url('./images/icon.png') no-repeat -359px 0;
+				}
+				input:focus {
+					background: #f6f6f6
+				}
+				.RadioWrap {
+					margin: 0 30px 0 30px;
+					background: url('./images/icon.png') no-repeat -169px -63px;
+					width: 60px;
+					cursor: pointer;
+					position: relative;
+					overflow: hidden;
+					.inputRadio {
+						opacity: 0;
+						-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+						filter: alpha(opacity=0);
+						width: 26px;
+						height: 26px;
+						position: absolute;
+						left: -99999px;
+					}
+				}
+				.on_check {
+					background: url('./images/icon.png') no-repeat -232px -63px;
+				}
+				.submitBtn {
+					margin-top: 39px;
+					border: none;
+					width: 392px;
+					height: 50px;
+					color: #fff;
+					font-size: 14px;
+					background: #000;
+					font-weight: 600;
+					transition: all .6s;
+					letter-spacing: 1px;
+					-ms-transition: all .6s;
+					-webkit-transition: all .6s;
+					-moz-transition: all .6s;
+					-o-transition: all .6s;
+					&:hover {
+						background: #434c53;
+					}
+				}
+				.formErrorContent {
+					font-size: 14px;
+					color: #d44a53;
+					background: #fff;
+					height: 20px;
+					line-height: 20px;
+					padding-left: 124px;
+					padding-top: 6px;
+					width: 283px;
+					text-align: left;
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import "_config.scss";
+@import "_var.scss";
+
+
+
+
+
+
+
+.scd_table{
+	width:100%;
+	text-align:center;
+	font-size:$px_12-30_all_tablefontsize;
+	border-left:$px_0-10_all_tableborder solid #d9d9d9;
+	border-top:$px_0-10_all_tableborder solid #d9d9d9;
+	tbody{
+		td{
+			background-color:#fff;
+			&:hover{
+				background-color: $color_all_tablecolorhover;
+				color:#fff;
+			}
+		}
+	}
+	td{
+		border-bottom:$px_0-10_all_tableborder solid #d9d9d9;
+		border-right:$px_0-10_all_tableborder solid #d9d9d9;
+		width:16.2%;
+		min-height: 41px;
+		line-height: 41px;
+		font-size: $px_12-30_all_tablefontsize;
+		color:#808080;
+	}
+	.scd_table_head {
+		background-color: $color_all_tablecolor;
+		filter:alpha(opacity=$num_0-100_all_tablepercent);
+		opacity:$num_0-100_all_tablepercent / 100;
+		text-decoration: none;
+		td {
+		color:#fff;
+		font-size: 18px;
+		font-family: "黑体",Simhei;
+	    }
+	}
+}
+        
